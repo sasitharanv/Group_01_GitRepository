@@ -1,4 +1,4 @@
-package com.sasi;
+package com.itqa;
 
 public class Main {
     public static void main(String[] args) {
