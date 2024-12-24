@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="LibraryAPITests">
+    <test name="APITestSuite">
+        <classes>
+            <class name="TestCases.GetBookAPITests"/>
+            <class name="TestCases.PostBookAPITests"/>
+            <class name="TestCases.PutBookAPITests"/>
+            <class name="TestCases.DeleteBookAPITests"/>
+        </classes>
+    </test>
+</suite>
