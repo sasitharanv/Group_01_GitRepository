@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="RestAssureTestNgProject" />
         <module name="library-system-tests" />
+        <module name="Group_01_GitRepository" />
       </profile>
     </annotationProcessing>
   </component>

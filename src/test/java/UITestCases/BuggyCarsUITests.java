@@ -1,15 +1,11 @@
 package UITestCases;
 
-import Pages.CarDetailsPage;
 import Pages.HomePage;
 import Pages.LoginPage;
 import Pages.RegisterPage;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-
-import java.util.List;
 
 public class BuggyCarsUITests extends BaseTest {
 
@@ -39,6 +35,7 @@ public class BuggyCarsUITests extends BaseTest {
 
         Assert.assertTrue(driver.getPageSource().contains("Hi, Test"));
     }
+
     //  Test Accessibility of All Links
     @Test
     public void testAccessibilityOfLinks() {
@@ -51,7 +48,7 @@ public class BuggyCarsUITests extends BaseTest {
     public void testMissingFieldsInRegistration() {
         driver.findElement(By.linkText("Register")).click();
         driver.findElement(By.cssSelector("button[type='submit']")).click();
-        String PageSource= driver.getPageSource();
+        String PageSource = driver.getPageSource();
         System.out.println("PageSource = " + PageSource);
         Assert.assertTrue(driver.getPageSource().contains("This field is required"));
     }
@@ -78,4 +75,25 @@ public class BuggyCarsUITests extends BaseTest {
         Assert.assertTrue(driver.getPageSource().contains("Username already exists"));
     }
 
+    @Test
+    public void testWeakPasswordRegistration() {
+        driver.findElement(By.linkText("Register")).click();
+        driver.findElement(By.id("username")).sendKeys("testuser456");
+        driver.findElement(By.id("firstName")).sendKeys("Weak");
+        driver.findElement(By.id("lastName")).sendKeys("Password");
+        driver.findElement(By.id("password")).sendKeys("123");
+        driver.findElement(By.id("confirmPassword")).sendKeys("123");
+        driver.findElement(By.cssSelector("button[type='submit']")).click();
+        Assert.assertTrue(driver.getPageSource().contains("Password strength is too weak"));
+    }
+
+    @Test
+    public void testProfilePageAccessibility() {
+        testLoginWithValidCredentials();
+        driver.findElement(By.linkText("Profile")).click();
+        Assert.assertTrue(driver.getPageSource().contains("Your Profile"));
+    }
+
 }
+
+
