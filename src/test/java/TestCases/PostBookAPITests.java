@@ -82,7 +82,7 @@ public class PostBookAPITests {
                 .post("/api/books");
 
         // Assertions
-        Assert.assertEquals(response.getStatusCode(), 409, "Expected status code is 400");
+        Assert.assertEquals(response.getStatusCode(), 409, "Expected status code is 409");
         Assert.assertEquals(response.jsonPath().getString("error"), "Duplicate ID provided", "Expected error message for duplicate ID");
     }
 
