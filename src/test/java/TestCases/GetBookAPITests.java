@@ -17,6 +17,8 @@ public class GetBookAPITests {
         RestAssuredClient.getInstance(); // Initializes RestAssured settings
     }
 
+
+
     @Test
     public void testGetAllBooksAsAdmin() {
         // Get credentials for admin user

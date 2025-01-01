@@ -1,5 +1,7 @@
-H:\RestAssureTestNgProject\src\test\java\Factory\UserFactory.java
-H:\RestAssureTestNgProject\src\test\java\TestCases\DeleteBookAPITests.java
-H:\RestAssureTestNgProject\src\test\java\TestCases\PostBookAPITests.java
-H:\RestAssureTestNgProject\src\test\java\TestCases\PutBookAPITests.java
-H:\RestAssureTestNgProject\src\test\java\TestCases\GetBookAPITests.java
+H:\Group_01_GitRepository\src\test\java\Factory\UserFactory.java
+H:\Group_01_GitRepository\src\test\java\TestCases\DeleteBookAPITests.java
+H:\Group_01_GitRepository\src\test\java\TestCases\PostBookAPITests.java
+H:\Group_01_GitRepository\src\test\java\UITestCases\BuggyCarsUITests.java
+H:\Group_01_GitRepository\src\test\java\TestCases\GetBookAPITests.java
+H:\Group_01_GitRepository\src\test\java\TestCases\PutBookAPITests.java
+H:\Group_01_GitRepository\src\test\java\UITestCases\BaseTest.java

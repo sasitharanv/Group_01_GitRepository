@@ -9,7 +9,8 @@ public class RestAssuredClient {
     // Private constructor to prevent instantiation
     private RestAssuredClient() {
         // Set base URI for the RestAssured client
-        RestAssured.baseURI = "http://localhost:7081";  // Replace with your base URL
+        RestAssured.baseURI = "http://13.60.22.209:7081";  // Replace with your base URL
+
     }
 
     // Public method to provide access to the Singleton instance

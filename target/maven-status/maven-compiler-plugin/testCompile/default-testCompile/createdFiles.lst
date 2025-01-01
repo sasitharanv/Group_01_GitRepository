@@ -1,5 +1,2 @@
 TestCases\DeleteBookAPITests.class
-TestCases\PostBookAPITests.class
-Factory\UserFactory.class
-TestCases\GetBookAPITests.class
 TestCases\PutBookAPITests.class
