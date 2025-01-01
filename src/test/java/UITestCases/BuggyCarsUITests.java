@@ -56,5 +56,26 @@ public class BuggyCarsUITests extends BaseTest {
         Assert.assertTrue(driver.getPageSource().contains("This field is required"));
     }
 
+    //  Verify UI Responsiveness Across Viewports
+    @Test
+    public void testResponsiveUI() {
+        driver.manage().window().setSize(new org.openqa.selenium.Dimension(1024, 768)); // Tablet size
+        Assert.assertTrue(driver.getPageSource().contains("Buggy Cars Rating"));
+
+        driver.manage().window().setSize(new org.openqa.selenium.Dimension(375, 667)); // Mobile size
+        Assert.assertTrue(driver.getPageSource().contains("Buggy Cars Rating"));
+    }
+
+    @Test
+    public void testDuplicateRegistration() {
+        driver.findElement(By.linkText("Register")).click();
+        driver.findElement(By.id("username")).sendKeys("testuser123"); // Existing username
+        driver.findElement(By.id("firstName")).sendKeys("Test");
+        driver.findElement(By.id("lastName")).sendKeys("User");
+        driver.findElement(By.id("password")).sendKeys("Password123!");
+        driver.findElement(By.id("confirmPassword")).sendKeys("Password123!");
+        driver.findElement(By.cssSelector("button[type='submit']")).click();
+        Assert.assertTrue(driver.getPageSource().contains("Username already exists"));
+    }
 
 }
