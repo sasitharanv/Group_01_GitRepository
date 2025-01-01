@@ -39,6 +39,22 @@ public class BuggyCarsUITests extends BaseTest {
 
         Assert.assertTrue(driver.getPageSource().contains("Hi, Test"));
     }
+    //  Test Accessibility of All Links
+    @Test
+    public void testAccessibilityOfLinks() {
+        driver.findElements(By.tagName("a")).forEach(link -> {
+            Assert.assertTrue(link.isDisplayed(), "Link is not accessible: " + link.getText());
+        });
+    }
+
+    @Test
+    public void testMissingFieldsInRegistration() {
+        driver.findElement(By.linkText("Register")).click();
+        driver.findElement(By.cssSelector("button[type='submit']")).click();
+        String PageSource= driver.getPageSource();
+        System.out.println("PageSource = " + PageSource);
+        Assert.assertTrue(driver.getPageSource().contains("This field is required"));
+    }
 
 
 }
