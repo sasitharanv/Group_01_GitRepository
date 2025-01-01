@@ -43,7 +43,31 @@
       <artifactId>log4j-api</artifactId>
       <version>2.14.1</version>
     </dependency>
+    <!-- Jackson Databind for JSON Parsing -->
+    <dependency>
+      <groupId>com.fasterxml.jackson.core</groupId>
+      <artifactId>jackson-databind</artifactId>
+      <version>2.15.2</version>
+    </dependency>
 
+    <!-- Apache HTTP Client (Optional, if needed for advanced API operations) -->
+    <dependency>
+      <groupId>org.apache.httpcomponents.client5</groupId>
+      <artifactId>httpclient5</artifactId>
+      <version>5.2.1</version>
+    </dependency>
+    <!-- Selenium WebDriver -->
+    <dependency>
+      <groupId>org.seleniumhq.selenium</groupId>
+      <artifactId>selenium-java</artifactId>
+      <version>4.12.0</version>
+    </dependency>
+    <!-- WebDriver Manager (Optional, for managing ChromeDriver and other drivers) -->
+    <dependency>
+      <groupId>io.github.bonigarcia</groupId>
+      <artifactId>webdrivermanager</artifactId>
+      <version>5.5.3</version>
+    </dependency>
     <!-- JSON Path for response validation -->
     <dependency>
       <groupId>io.rest-assured</groupId>
@@ -63,10 +87,29 @@
       <version>1.2.11</version> <!-- Replace with the latest version -->
     </dependency>
     <dependency>
+      <groupId>io.github.bonigarcia</groupId>
+      <artifactId>webdrivermanager</artifactId>
+      <version>5.5.3</version>
+    </dependency>
+
+
+    <dependency>
       <groupId>io.rest-assured</groupId>
       <artifactId>rest-assured</artifactId>
       <version>5.4.0</version>
       <scope>compile</scope>
     </dependency>
   </dependencies>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <configuration>
+          <source>11</source>
+          <target>11</target>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
 </project>

@@ -8,4 +8,9 @@
             <class name="TestCases.DeleteBookAPITests"/>
         </classes>
     </test>
+    <test name="UI Tests">
+        <classes>
+            <class name="UITestCases.BuggyCarsUITests"/>
+        </classes>
+    </test>
 </suite>
