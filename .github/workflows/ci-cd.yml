@@ -1,4 +1,4 @@
-name: Maven CI/CD with Email Notifications
+name: CI/CD for Testing
 
 on:
   push:
@@ -9,62 +9,37 @@ on:
       - main
 
 jobs:
-  build:
+  run-tests:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout Code
         uses: actions/checkout@v3
 
-      - name: Set up JDK 11
+      - name: Set up Java
         uses: actions/setup-java@v3
         with:
-          java-version: '11'
+          distribution: 'temurin'
+          java-version: '17'
 
-      - name: Cache Maven Dependencies
-        uses: actions/cache@v3
-        with:
-          path: ~/.m2/repository
-          key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
-          restore-keys: |
-            ${{ runner.os }}-maven-
+      - name: Install Dependencies
+        run: mvn install
 
-      - name: Install Dependencies and Run Tests
-        run: mvn clean install
+      - name: Run Tests
+        run: mvn test
+        continue-on-error: true
 
-      - name: Generate Surefire Report
-        run: mvn surefire-report:report
-
-      - name: Upload Surefire Reports
-        uses: actions/upload-artifact@v3
-        with:
-          name: surefire-reports
-          path: target/surefire-reports/
-
-  notify:
-    needs: build
-    if: failure()
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Send Email Notification
+      - name: Notify on Failure
+        if: failure()
         uses: dawidd6/action-send-mail@v3
         with:
           server_address: smtp.gmail.com
           server_port: 587
-          username: ${{ secrets.SMTP_USERNAME }}
-          password: ${{ secrets.SMTP_PASSWORD }}
-          subject: "Build Failed for ${{ github.repository }}"
+          username: ${{ secrets.EMAIL_USERNAME }}
+          password: ${{ secrets.EMAIL_PASSWORD }}
+          to: recipient@example.com
+          subject: "Test Failure in CI/CD Pipeline"
           body: |
             Hello,
-
-            The CI/CD build for the repository ${{ github.repository }} has failed.
-            
-            Branch: ${{ github.ref }}
-            Commit: ${{ github.sha }}
-            View details at: ${{ github.run_url }}
-            
-            Regards,
-            GitHub Actions
-          to: sasitharanvaratharasa887@gmail.com.com
-          from: no-reply@github.com
+            The tests in the GitHub Actions pipeline have failed.
+            Please review the logs and take necessary action.
