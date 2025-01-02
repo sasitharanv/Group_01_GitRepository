@@ -1,0 +1,90 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "https://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+<title>TestNG Report</title>
+<style type="text/css">table {margin-bottom:10px;border-collapse:collapse;empty-cells:show}th,td {border:1px solid #009;padding:.25em .5em}th {vertical-align:bottom}td {vertical-align:top}table a {font-weight:bold}.stripe td {background-color: #E6EBF9}.num {text-align:right}.passedodd td {background-color: #3F3}.passedeven td {background-color: #0A0}.skippedodd td {background-color: #DDD}.skippedeven td {background-color: #CCC}.failedodd td,.attn {background-color: #F33}.failedeven td,.stripe .attn {background-color: #D00}.stacktrace {white-space:pre;font-family:monospace}.totop {font-size:85%;text-align:center;border-bottom:2px solid #000}.invisible {display:none}</style>
+</head>
+<body>
+<table>
+<tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Retried</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
+<tr><th colspan="8">Surefire suite</th></tr>
+<tr><td><a href="#t0">Surefire test</a></td><td class="num">8</td><td class="num">0</td><td class="num">0</td><td class="num attn">16</td><td class="num">44,289</td><td></td><td></td></tr>
+</table>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Surefire suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Surefire test &#8212; failed</th></tr><tr class="failedeven"><td rowspan="4">TestCases.GetBookAPITests</td><td><a href="#m0">testGetBookByIdAsAdmin</a></td><td rowspan="1">1735804087598</td><td rowspan="1">795</td></tr><tr class="failedeven"><td><a href="#m1">testGetBookByIdAsRegularUser</a></td><td rowspan="1">1735804088395</td><td rowspan="1">725</td></tr><tr class="failedeven"><td><a href="#m2">testGetBookByIdAsUser</a></td><td rowspan="1">1735804089120</td><td rowspan="1">741</td></tr><tr class="failedeven"><td><a href="#m3">testGetBookByValidIdAsAdmin</a></td><td rowspan="1">1735804090671</td><td rowspan="1">757</td></tr><tr class="failedodd"><td rowspan="6">TestCases.PutBookAPITests</td><td><a href="#m4">testUpdateBookWithAnotherBooksTitleAsAdmin</a></td><td rowspan="1">1735804092431</td><td rowspan="1">843</td></tr><tr class="failedodd"><td><a href="#m5">testUpdateBookWithEmptyAuthor</a></td><td rowspan="1">1735804093274</td><td rowspan="1">800</td></tr><tr class="failedodd"><td><a href="#m6">testUpdateBookWithMissingOrInvalidTitleAsAdmin</a></td><td rowspan="1">1735804094903</td><td rowspan="1">956</td></tr><tr class="failedodd"><td><a href="#m7">testUpdateBookWithNoneParametersAsAdmin</a></td><td rowspan="1">1735804096680</td><td rowspan="1">1025</td></tr><tr class="failedodd"><td><a href="#m8">testUpdateBookWithValidDataAsAdmin</a></td><td rowspan="1">1735804097706</td><td rowspan="1">783</td></tr><tr class="failedodd"><td><a href="#m9">testUpdateBookWithValidDataAsUser</a></td><td rowspan="1">1735804098490</td><td rowspan="1">917</td></tr><tr class="failedeven"><td rowspan="6">UITestCases.BuggyCarsUITests</td><td><a href="#m10">testDuplicateRegistration</a></td><td rowspan="1">1735804106523</td><td rowspan="1">673</td></tr><tr class="failedeven"><td><a href="#m11">testLoginWithValidCredentials</a></td><td rowspan="1">1735804111380</td><td rowspan="1">298</td></tr><tr class="failedeven"><td><a href="#m12">testMissingFieldsInRegistration</a></td><td rowspan="1">1735804115940</td><td rowspan="1">257</td></tr><tr class="failedeven"><td><a href="#m13">testProfilePageAccessibility</a></td><td rowspan="1">1735804118708</td><td rowspan="1">265</td></tr><tr class="failedeven"><td><a href="#m14">testUserRegistration</a></td><td rowspan="1">1735804124746</td><td rowspan="1">753</td></tr><tr class="failedeven"><td><a href="#m15">testWeakPasswordRegistration</a></td><td rowspan="1">1735804127947</td><td rowspan="1">768</td></tr><tr><th colspan="4">Surefire test &#8212; passed</th></tr><tr class="passedeven"><td rowspan="3">TestCases.GetBookAPITests</td><td><a href="#m16">testGetAllBooksAsAdmin</a></td><td rowspan="1">1735804085106</td><td rowspan="1">1684</td></tr><tr class="passedeven"><td><a href="#m17">testGetAllBooksAsUser</a></td><td rowspan="1">1735804086792</td><td rowspan="1">805</td></tr><tr class="passedeven"><td><a href="#m18">testGetBookByInvalidIdAsAdmin</a></td><td rowspan="1">1735804089863</td><td rowspan="1">806</td></tr><tr class="passedodd"><td rowspan="3">TestCases.PutBookAPITests</td><td><a href="#m19">testUpdateBookWithAnotherBooksId</a></td><td rowspan="1">1735804091431</td><td rowspan="1">999</td></tr><tr class="passedodd"><td><a href="#m20">testUpdateBookWithInvalidIdAsAdmin</a></td><td rowspan="1">1735804094076</td><td rowspan="1">825</td></tr><tr class="passedodd"><td><a href="#m21">testUpdateBookWithMissingTitleAndAuthor</a></td><td rowspan="1">1735804095860</td><td rowspan="1">819</td></tr><tr class="passedeven"><td rowspan="2">UITestCases.BuggyCarsUITests</td><td><a href="#m22">testAccessibilityOfLinks</a></td><td rowspan="1">1735804103328</td><td rowspan="1">219</td></tr><tr class="passedeven"><td><a href="#m23">testResponsiveUI</a></td><td rowspan="1">1735804121458</td><td rowspan="1">792</td></tr></tbody>
+</table>
+<h2>Surefire test</h2><h3 id="m0">TestCases.GetBookAPITests#testGetBookByIdAsAdmin</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: Expected status code is 200 expected [200] but found [404]
+	at TestCases.GetBookAPITests.testGetBookByIdAsAdmin(GetBookAPITests.java:73)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 37 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m1">TestCases.GetBookAPITests#testGetBookByIdAsRegularUser</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: Expected status code is 200 expected [200] but found [403]
+	at TestCases.GetBookAPITests.testGetBookByIdAsRegularUser(GetBookAPITests.java:133)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 37 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m2">TestCases.GetBookAPITests#testGetBookByIdAsUser</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: Expected status code is 200 expected [200] but found [403]
+	at TestCases.GetBookAPITests.testGetBookByIdAsUser(GetBookAPITests.java:58)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 37 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m3">TestCases.GetBookAPITests#testGetBookByValidIdAsAdmin</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: Expected status code is 200 expected [400] but found [404]
+	at TestCases.GetBookAPITests.testGetBookByValidIdAsAdmin(GetBookAPITests.java:91)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 37 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m4">TestCases.PutBookAPITests#testUpdateBookWithAnotherBooksTitleAsAdmin</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: Expected status code is 400 for using another book&apos;s title expected [400] but found [404]
+	at TestCases.PutBookAPITests.testUpdateBookWithAnotherBooksTitleAsAdmin(PutBookAPITests.java:216)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 37 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m5">TestCases.PutBookAPITests#testUpdateBookWithEmptyAuthor</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: Expected status code is 400 for empty author expected [400] but found [200]
+	at TestCases.PutBookAPITests.testUpdateBookWithEmptyAuthor(PutBookAPITests.java:113)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 37 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m6">TestCases.PutBookAPITests#testUpdateBookWithMissingOrInvalidTitleAsAdmin</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: Expected status code is 400 for missing/empty title expected [400] but found [200]
+	at TestCases.PutBookAPITests.testUpdateBookWithMissingOrInvalidTitleAsAdmin(PutBookAPITests.java:181)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 37 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m7">TestCases.PutBookAPITests#testUpdateBookWithNoneParametersAsAdmin</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: Response should indicate invalid input parameters expected [true] but found [false]
+	at TestCases.PutBookAPITests.testUpdateBookWithNoneParametersAsAdmin(PutBookAPITests.java:239)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 35 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m8">TestCases.PutBookAPITests#testUpdateBookWithValidDataAsAdmin</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: Expected status code is 200 expected [200] but found [404]
+	at TestCases.PutBookAPITests.testUpdateBookWithValidDataAsAdmin(PutBookAPITests.java:42)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 37 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m9">TestCases.PutBookAPITests#testUpdateBookWithValidDataAsUser</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: Response should indicate forbidden access expected [true] but found [false]
+	at TestCases.PutBookAPITests.testUpdateBookWithValidDataAsUser(PutBookAPITests.java:67)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 35 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m10">UITestCases.BuggyCarsUITests#testDuplicateRegistration</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: expected [true] but found [false]
+	at UITestCases.BuggyCarsUITests.testDuplicateRegistration(BuggyCarsUITests.java:76)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 36 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m11">UITestCases.BuggyCarsUITests#testLoginWithValidCredentials</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: expected [true] but found [false]
+	at UITestCases.BuggyCarsUITests.testLoginWithValidCredentials(BuggyCarsUITests.java:36)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 36 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m12">UITestCases.BuggyCarsUITests#testMissingFieldsInRegistration</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: expected [true] but found [false]
+	at UITestCases.BuggyCarsUITests.testMissingFieldsInRegistration(BuggyCarsUITests.java:54)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 36 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m13">UITestCases.BuggyCarsUITests#testProfilePageAccessibility</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: expected [true] but found [false]
+	at UITestCases.BuggyCarsUITests.testLoginWithValidCredentials(BuggyCarsUITests.java:36)
+	at UITestCases.BuggyCarsUITests.testProfilePageAccessibility(BuggyCarsUITests.java:93)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 36 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m14">UITestCases.BuggyCarsUITests#testUserRegistration</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: expected [true] but found [false]
+	at UITestCases.BuggyCarsUITests.testUserRegistration(BuggyCarsUITests.java:25)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 36 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m15">UITestCases.BuggyCarsUITests#testWeakPasswordRegistration</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: expected [true] but found [false]
+	at UITestCases.BuggyCarsUITests.testWeakPasswordRegistration(BuggyCarsUITests.java:88)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 36 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m16">TestCases.GetBookAPITests#testGetAllBooksAsAdmin</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m17">TestCases.GetBookAPITests#testGetAllBooksAsUser</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m18">TestCases.GetBookAPITests#testGetBookByInvalidIdAsAdmin</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m19">TestCases.PutBookAPITests#testUpdateBookWithAnotherBooksId</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m20">TestCases.PutBookAPITests#testUpdateBookWithInvalidIdAsAdmin</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m21">TestCases.PutBookAPITests#testUpdateBookWithMissingTitleAndAuthor</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m22">UITestCases.BuggyCarsUITests#testAccessibilityOfLinks</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m23">UITestCases.BuggyCarsUITests#testResponsiveUI</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+</body>
+</html>

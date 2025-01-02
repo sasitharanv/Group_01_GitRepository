@@ -95,6 +95,24 @@ public class BuggyCarsUITests extends BaseTest {
         Assert.assertTrue(driver.getPageSource().contains("Your Profile"));
     }
 
+    @Test
+    public void testBrokenLinksOnHomepage() {
+        List<WebElement> links = driver.findElements(By.tagName("a"));
+        for (WebElement link : links) {
+            String href = link.getAttribute("href");
+            Assert.assertNotNull(href, "Link is broken: " + link.getText());
+        }
+    }
+
+    @Test
+    public void testCommentCharacterLimit() {
+        testLoginWithValidCredentials();
+        driver.findElement(By.linkText("Overall Rating")).click();
+        driver.findElement(By.linkText("Buggy Car Model")).click();
+        driver.findElement(By.id("comment")).sendKeys("a".repeat(1001)); // Exceeding limit
+        driver.findElement(By.cssSelector("button[type='submit']")).click();
+        Assert.assertTrue(driver.getPageSource().contains("Comment exceeds maximum length"));
+}
 
 }
 
