@@ -31,24 +31,15 @@ jobs:
           ./mvnw test
         continue-on-error: true
 
-      - name: Check for test failures
-        id: test-results
-        run: |
-          if grep -q "<failure>" target/surefire-reports/*; then
-            echo "failure=true" >> $GITHUB_ENV
-          else
-            echo "failure=false" >> $GITHUB_ENV
-          fi
-
       - name: Archive test reports
-        if: env.failure == 'true'
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: Test-Reports
-          path: target/surefire-reports
+          path: target/surefire-reports/
 
       - name: Send email with reports
-        if: env.failure == 'true'
+        if: failure()
         uses: dawidd6/action-send-mail@v3
         with:
           server_address: smtp.gmail.com
@@ -58,7 +49,7 @@ jobs:
           subject: Test Failure Notification
           body: |
             The CI/CD pipeline has detected test failures.
-            Test reports are attached for review.
+            Please find the attached test reports for further investigation.
           to: "recipient@example.com"
           from: "noreply@example.com"
           attachments: target/surefire-reports/testng-results.xml
