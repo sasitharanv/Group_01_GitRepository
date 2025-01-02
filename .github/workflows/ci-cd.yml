@@ -35,7 +35,7 @@ jobs:
         run: mvn install --no-transfer-progress
 
       - name: Run All API Tests
-        run: mvn test  # Runs all tests in the project
+        run: mvn test -Dmaven.test.failure.ignore=false  # Ensure failure is captured
 
   # Step 2: Run All UI Tests (Depends on API Tests)
   run-ui-tests:
@@ -64,7 +64,7 @@ jobs:
         run: mvn install --no-transfer-progress
 
       - name: Run All UI Tests
-        run: mvn test  # Runs all tests, including UI tests
+        run: mvn test -Dmaven.test.failure.ignore=false  # Ensure failure is captured
 
   # Step 3: Notify on Failure or Success
   notify-on-failure-or-success:
@@ -82,6 +82,7 @@ jobs:
           server_port: 587
           username: ${{ secrets.EMAIL_USERNAME }}
           password: ${{ secrets.EMAIL_PASSWORD }}
+          from: ${{ secrets.EMAIL_USERNAME }}  # The sender's email address
           subject: "Test Results in CI/CD Pipeline"
           to: sasitharanvaratharasa887@gmail.com
           body: |
@@ -93,4 +94,4 @@ jobs:
             - API Tests Status: ${{ needs.run-api-tests.result }}
             - UI Tests Status: ${{ needs.run-ui-tests.result }}
 
-            Please review the logs for further details.
+            If there were failures, please refer to the logs for details.
