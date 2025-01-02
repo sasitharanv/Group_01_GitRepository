@@ -56,5 +56,5 @@ jobs:
             Branch: ${{ github.ref_name }}
             Commit: ${{ github.sha }}
             See details: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
-          to: sasitharanvaratharasa887@gmail.com.com
-          from: sasvaratharasa540@gmail.com.com
+          to: sasitharanvaratharasa887@gmail.com
+          from: sasvaratharasa540@gmail.com
