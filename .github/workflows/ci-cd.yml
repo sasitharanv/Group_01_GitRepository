@@ -1,4 +1,4 @@
-name: Java CI with Email Notification
+name: Java CI with Allure Report Email Notification
 
 on:
   push:
@@ -34,18 +34,22 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-maven
 
-      # Step 4: Build and test the project
-      - name: Build with Maven
-        id: build
-        run: mvn clean install -B
-        continue-on-error: true
+      # Step 4: Build and run tests with Maven
+      - name: Run Tests with Maven
+        run: mvn clean test
 
-      # Step 5: Send email notification
+      # Step 5: Generate Allure Report
+      - name: Generate Allure Report
+        run: |
+          mvn allure:report
+          zip -r allure-report.zip target/site/allure-report
+
+      # Step 6: Send Email Notification with Allure Report
       - name: Send Email Notification
         if: always()
         uses: dawidd6/action-send-mail@v3
         with:
-          server_address: smtp.gmail.com # Use your SMTP server
+          server_address: smtp.gmail.com
           server_port: 587
           username: ${{ secrets.EMAIL_USERNAME }}
           password: ${{ secrets.EMAIL_PASSWORD }}
@@ -56,5 +60,7 @@ jobs:
             Branch: ${{ github.ref_name }}
             Commit: ${{ github.sha }}
             See details: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+            The Allure report has been attached to this email.
           to: sasitharanvaratharasa887@gmail.com
           from: sasvaratharasa540@gmail.com
+          attachments: allure-report.zip
