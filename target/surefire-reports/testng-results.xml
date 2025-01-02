@@ -1,0 +1,944 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="24" passed="8" failed="16" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2025-01-02T13:18:04 IST" name="Surefire suite" finished-at="2025-01-02T13:18:49 IST" duration-ms="44289">
+    <groups>
+    </groups>
+    <test started-at="2025-01-02T13:18:04 IST" name="Surefire test" finished-at="2025-01-02T13:18:49 IST" duration-ms="44289">
+      <class name="TestCases.PutBookAPITests">
+        <test-method signature="testUpdateBookWithAnotherBooksId()[pri:0, instance:TestCases.PutBookAPITests@7cc0cdad]" started-at="2025-01-02T13:18:11 IST" name="testUpdateBookWithAnotherBooksId" finished-at="2025-01-02T13:18:12 IST" duration-ms="999" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testUpdateBookWithAnotherBooksId -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:TestCases.PutBookAPITests@7cc0cdad]" started-at="2025-01-02T13:18:11 IST" name="setup" finished-at="2025-01-02T13:18:11 IST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="testUpdateBookWithAnotherBooksTitleAsAdmin()[pri:0, instance:TestCases.PutBookAPITests@7cc0cdad]" started-at="2025-01-02T13:18:12 IST" name="testUpdateBookWithAnotherBooksTitleAsAdmin" finished-at="2025-01-02T13:18:13 IST" duration-ms="843" status="FAIL">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[Expected status code is 400 for using another book's title expected [400] but found [404]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: Expected status code is 400 for using another book's title expected [400] but found [404]
+at org.testng.Assert.fail(Assert.java:110)
+at org.testng.Assert.failNotEquals(Assert.java:1413)
+at org.testng.Assert.assertEqualsImpl(Assert.java:149)
+at org.testng.Assert.assertEquals(Assert.java:131)
+at org.testng.Assert.assertEquals(Assert.java:1240)
+at TestCases.PutBookAPITests.testUpdateBookWithAnotherBooksTitleAsAdmin(PutBookAPITests.java:216)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:969)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:829)
+at org.testng.TestRunner.run(TestRunner.java:602)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:437)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:431)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:391)
+at org.testng.SuiteRunner.run(SuiteRunner.java:330)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1256)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1176)
+at org.testng.TestNG.runSuites(TestNG.java:1099)
+at org.testng.TestNG.run(TestNG.java:1067)
+at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:151)
+at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:192)
+at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:93)
+at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:155)
+at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:456)
+at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:169)
+at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:595)
+at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:581)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testUpdateBookWithAnotherBooksTitleAsAdmin -->
+        <test-method signature="testUpdateBookWithEmptyAuthor()[pri:0, instance:TestCases.PutBookAPITests@7cc0cdad]" started-at="2025-01-02T13:18:13 IST" name="testUpdateBookWithEmptyAuthor" finished-at="2025-01-02T13:18:14 IST" duration-ms="800" status="FAIL">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[Expected status code is 400 for empty author expected [400] but found [200]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: Expected status code is 400 for empty author expected [400] but found [200]
+at org.testng.Assert.fail(Assert.java:110)
+at org.testng.Assert.failNotEquals(Assert.java:1413)
+at org.testng.Assert.assertEqualsImpl(Assert.java:149)
+at org.testng.Assert.assertEquals(Assert.java:131)
+at org.testng.Assert.assertEquals(Assert.java:1240)
+at TestCases.PutBookAPITests.testUpdateBookWithEmptyAuthor(PutBookAPITests.java:113)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:969)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:829)
+at org.testng.TestRunner.run(TestRunner.java:602)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:437)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:431)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:391)
+at org.testng.SuiteRunner.run(SuiteRunner.java:330)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1256)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1176)
+at org.testng.TestNG.runSuites(TestNG.java:1099)
+at org.testng.TestNG.run(TestNG.java:1067)
+at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:151)
+at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:192)
+at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:93)
+at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:155)
+at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:456)
+at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:169)
+at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:595)
+at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:581)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testUpdateBookWithEmptyAuthor -->
+        <test-method signature="testUpdateBookWithInvalidIdAsAdmin()[pri:0, instance:TestCases.PutBookAPITests@7cc0cdad]" started-at="2025-01-02T13:18:14 IST" name="testUpdateBookWithInvalidIdAsAdmin" finished-at="2025-01-02T13:18:14 IST" duration-ms="825" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testUpdateBookWithInvalidIdAsAdmin -->
+        <test-method signature="testUpdateBookWithMissingOrInvalidTitleAsAdmin()[pri:0, instance:TestCases.PutBookAPITests@7cc0cdad]" started-at="2025-01-02T13:18:14 IST" name="testUpdateBookWithMissingOrInvalidTitleAsAdmin" finished-at="2025-01-02T13:18:15 IST" duration-ms="956" status="FAIL">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[Expected status code is 400 for missing/empty title expected [400] but found [200]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: Expected status code is 400 for missing/empty title expected [400] but found [200]
+at org.testng.Assert.fail(Assert.java:110)
+at org.testng.Assert.failNotEquals(Assert.java:1413)
+at org.testng.Assert.assertEqualsImpl(Assert.java:149)
+at org.testng.Assert.assertEquals(Assert.java:131)
+at org.testng.Assert.assertEquals(Assert.java:1240)
+at TestCases.PutBookAPITests.testUpdateBookWithMissingOrInvalidTitleAsAdmin(PutBookAPITests.java:181)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:969)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:829)
+at org.testng.TestRunner.run(TestRunner.java:602)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:437)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:431)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:391)
+at org.testng.SuiteRunner.run(SuiteRunner.java:330)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1256)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1176)
+at org.testng.TestNG.runSuites(TestNG.java:1099)
+at org.testng.TestNG.run(TestNG.java:1067)
+at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:151)
+at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:192)
+at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:93)
+at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:155)
+at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:456)
+at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:169)
+at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:595)
+at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:581)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testUpdateBookWithMissingOrInvalidTitleAsAdmin -->
+        <test-method signature="testUpdateBookWithMissingTitleAndAuthor()[pri:0, instance:TestCases.PutBookAPITests@7cc0cdad]" started-at="2025-01-02T13:18:15 IST" name="testUpdateBookWithMissingTitleAndAuthor" finished-at="2025-01-02T13:18:16 IST" duration-ms="819" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testUpdateBookWithMissingTitleAndAuthor -->
+        <test-method signature="testUpdateBookWithNoneParametersAsAdmin()[pri:0, instance:TestCases.PutBookAPITests@7cc0cdad]" started-at="2025-01-02T13:18:16 IST" name="testUpdateBookWithNoneParametersAsAdmin" finished-at="2025-01-02T13:18:17 IST" duration-ms="1025" status="FAIL">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[Response should indicate invalid input parameters expected [true] but found [false]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: Response should indicate invalid input parameters expected [true] but found [false]
+at org.testng.Assert.fail(Assert.java:110)
+at org.testng.Assert.failNotEquals(Assert.java:1413)
+at org.testng.Assert.assertTrue(Assert.java:56)
+at TestCases.PutBookAPITests.testUpdateBookWithNoneParametersAsAdmin(PutBookAPITests.java:239)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:969)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:829)
+at org.testng.TestRunner.run(TestRunner.java:602)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:437)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:431)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:391)
+at org.testng.SuiteRunner.run(SuiteRunner.java:330)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1256)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1176)
+at org.testng.TestNG.runSuites(TestNG.java:1099)
+at org.testng.TestNG.run(TestNG.java:1067)
+at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:151)
+at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:192)
+at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:93)
+at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:155)
+at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:456)
+at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:169)
+at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:595)
+at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:581)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testUpdateBookWithNoneParametersAsAdmin -->
+        <test-method signature="testUpdateBookWithValidDataAsAdmin()[pri:0, instance:TestCases.PutBookAPITests@7cc0cdad]" started-at="2025-01-02T13:18:17 IST" name="testUpdateBookWithValidDataAsAdmin" finished-at="2025-01-02T13:18:18 IST" duration-ms="783" status="FAIL">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[Expected status code is 200 expected [200] but found [404]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: Expected status code is 200 expected [200] but found [404]
+at org.testng.Assert.fail(Assert.java:110)
+at org.testng.Assert.failNotEquals(Assert.java:1413)
+at org.testng.Assert.assertEqualsImpl(Assert.java:149)
+at org.testng.Assert.assertEquals(Assert.java:131)
+at org.testng.Assert.assertEquals(Assert.java:1240)
+at TestCases.PutBookAPITests.testUpdateBookWithValidDataAsAdmin(PutBookAPITests.java:42)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:969)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:829)
+at org.testng.TestRunner.run(TestRunner.java:602)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:437)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:431)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:391)
+at org.testng.SuiteRunner.run(SuiteRunner.java:330)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1256)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1176)
+at org.testng.TestNG.runSuites(TestNG.java:1099)
+at org.testng.TestNG.run(TestNG.java:1067)
+at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:151)
+at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:192)
+at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:93)
+at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:155)
+at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:456)
+at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:169)
+at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:595)
+at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:581)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testUpdateBookWithValidDataAsAdmin -->
+        <test-method signature="testUpdateBookWithValidDataAsUser()[pri:0, instance:TestCases.PutBookAPITests@7cc0cdad]" started-at="2025-01-02T13:18:18 IST" name="testUpdateBookWithValidDataAsUser" finished-at="2025-01-02T13:18:19 IST" duration-ms="917" status="FAIL">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[Response should indicate forbidden access expected [true] but found [false]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: Response should indicate forbidden access expected [true] but found [false]
+at org.testng.Assert.fail(Assert.java:110)
+at org.testng.Assert.failNotEquals(Assert.java:1413)
+at org.testng.Assert.assertTrue(Assert.java:56)
+at TestCases.PutBookAPITests.testUpdateBookWithValidDataAsUser(PutBookAPITests.java:67)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:969)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:829)
+at org.testng.TestRunner.run(TestRunner.java:602)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:437)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:431)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:391)
+at org.testng.SuiteRunner.run(SuiteRunner.java:330)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1256)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1176)
+at org.testng.TestNG.runSuites(TestNG.java:1099)
+at org.testng.TestNG.run(TestNG.java:1067)
+at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:151)
+at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:192)
+at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:93)
+at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:155)
+at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:456)
+at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:169)
+at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:595)
+at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:581)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testUpdateBookWithValidDataAsUser -->
+      </class> <!-- TestCases.PutBookAPITests -->
+      <class name="UITestCases.BuggyCarsUITests">
+        <test-method is-config="true" signature="setup()[pri:0, instance:UITestCases.BuggyCarsUITests@4d5d943d]" started-at="2025-01-02T13:18:19 IST" name="setup" finished-at="2025-01-02T13:18:23 IST" duration-ms="3918" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="testAccessibilityOfLinks()[pri:0, instance:UITestCases.BuggyCarsUITests@4d5d943d]" started-at="2025-01-02T13:18:23 IST" name="testAccessibilityOfLinks" finished-at="2025-01-02T13:18:23 IST" duration-ms="219" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testAccessibilityOfLinks -->
+        <test-method is-config="true" signature="teardown()[pri:0, instance:UITestCases.BuggyCarsUITests@4d5d943d]" started-at="2025-01-02T13:18:23 IST" name="teardown" finished-at="2025-01-02T13:18:23 IST" duration-ms="329" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:UITestCases.BuggyCarsUITests@4d5d943d]" started-at="2025-01-02T13:18:23 IST" name="setup" finished-at="2025-01-02T13:18:26 IST" duration-ms="2646" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="testDuplicateRegistration()[pri:0, instance:UITestCases.BuggyCarsUITests@4d5d943d]" started-at="2025-01-02T13:18:26 IST" name="testDuplicateRegistration" finished-at="2025-01-02T13:18:27 IST" duration-ms="673" status="FAIL">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[expected [true] but found [false]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: expected [true] but found [false]
+at org.testng.Assert.fail(Assert.java:110)
+at org.testng.Assert.failNotEquals(Assert.java:1413)
+at org.testng.Assert.assertTrue(Assert.java:56)
+at org.testng.Assert.assertTrue(Assert.java:66)
+at UITestCases.BuggyCarsUITests.testDuplicateRegistration(BuggyCarsUITests.java:76)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:969)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:829)
+at org.testng.TestRunner.run(TestRunner.java:602)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:437)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:431)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:391)
+at org.testng.SuiteRunner.run(SuiteRunner.java:330)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1256)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1176)
+at org.testng.TestNG.runSuites(TestNG.java:1099)
+at org.testng.TestNG.run(TestNG.java:1067)
+at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:151)
+at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:192)
+at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:93)
+at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:155)
+at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:456)
+at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:169)
+at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:595)
+at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:581)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testDuplicateRegistration -->
+        <test-method is-config="true" signature="teardown()[pri:0, instance:UITestCases.BuggyCarsUITests@4d5d943d]" started-at="2025-01-02T13:18:27 IST" name="teardown" finished-at="2025-01-02T13:18:27 IST" duration-ms="312" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:UITestCases.BuggyCarsUITests@4d5d943d]" started-at="2025-01-02T13:18:27 IST" name="setup" finished-at="2025-01-02T13:18:31 IST" duration-ms="3871" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="testLoginWithValidCredentials()[pri:0, instance:UITestCases.BuggyCarsUITests@4d5d943d]" started-at="2025-01-02T13:18:31 IST" name="testLoginWithValidCredentials" finished-at="2025-01-02T13:18:31 IST" duration-ms="298" status="FAIL">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[expected [true] but found [false]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: expected [true] but found [false]
+at org.testng.Assert.fail(Assert.java:110)
+at org.testng.Assert.failNotEquals(Assert.java:1413)
+at org.testng.Assert.assertTrue(Assert.java:56)
+at org.testng.Assert.assertTrue(Assert.java:66)
+at UITestCases.BuggyCarsUITests.testLoginWithValidCredentials(BuggyCarsUITests.java:36)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:969)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:829)
+at org.testng.TestRunner.run(TestRunner.java:602)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:437)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:431)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:391)
+at org.testng.SuiteRunner.run(SuiteRunner.java:330)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1256)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1176)
+at org.testng.TestNG.runSuites(TestNG.java:1099)
+at org.testng.TestNG.run(TestNG.java:1067)
+at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:151)
+at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:192)
+at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:93)
+at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:155)
+at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:456)
+at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:169)
+at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:595)
+at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:581)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testLoginWithValidCredentials -->
+        <test-method is-config="true" signature="teardown()[pri:0, instance:UITestCases.BuggyCarsUITests@4d5d943d]" started-at="2025-01-02T13:18:31 IST" name="teardown" finished-at="2025-01-02T13:18:31 IST" duration-ms="301" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:UITestCases.BuggyCarsUITests@4d5d943d]" started-at="2025-01-02T13:18:31 IST" name="setup" finished-at="2025-01-02T13:18:35 IST" duration-ms="3960" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="testMissingFieldsInRegistration()[pri:0, instance:UITestCases.BuggyCarsUITests@4d5d943d]" started-at="2025-01-02T13:18:35 IST" name="testMissingFieldsInRegistration" finished-at="2025-01-02T13:18:36 IST" duration-ms="257" status="FAIL">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[expected [true] but found [false]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: expected [true] but found [false]
+at org.testng.Assert.fail(Assert.java:110)
+at org.testng.Assert.failNotEquals(Assert.java:1413)
+at org.testng.Assert.assertTrue(Assert.java:56)
+at org.testng.Assert.assertTrue(Assert.java:66)
+at UITestCases.BuggyCarsUITests.testMissingFieldsInRegistration(BuggyCarsUITests.java:54)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:969)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:829)
+at org.testng.TestRunner.run(TestRunner.java:602)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:437)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:431)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:391)
+at org.testng.SuiteRunner.run(SuiteRunner.java:330)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1256)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1176)
+at org.testng.TestNG.runSuites(TestNG.java:1099)
+at org.testng.TestNG.run(TestNG.java:1067)
+at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:151)
+at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:192)
+at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:93)
+at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:155)
+at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:456)
+at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:169)
+at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:595)
+at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:581)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testMissingFieldsInRegistration -->
+        <test-method is-config="true" signature="teardown()[pri:0, instance:UITestCases.BuggyCarsUITests@4d5d943d]" started-at="2025-01-02T13:18:36 IST" name="teardown" finished-at="2025-01-02T13:18:36 IST" duration-ms="327" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:UITestCases.BuggyCarsUITests@4d5d943d]" started-at="2025-01-02T13:18:36 IST" name="setup" finished-at="2025-01-02T13:18:38 IST" duration-ms="2181" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="testProfilePageAccessibility()[pri:0, instance:UITestCases.BuggyCarsUITests@4d5d943d]" started-at="2025-01-02T13:18:38 IST" name="testProfilePageAccessibility" finished-at="2025-01-02T13:18:38 IST" duration-ms="265" status="FAIL">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[expected [true] but found [false]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: expected [true] but found [false]
+at org.testng.Assert.fail(Assert.java:110)
+at org.testng.Assert.failNotEquals(Assert.java:1413)
+at org.testng.Assert.assertTrue(Assert.java:56)
+at org.testng.Assert.assertTrue(Assert.java:66)
+at UITestCases.BuggyCarsUITests.testLoginWithValidCredentials(BuggyCarsUITests.java:36)
+at UITestCases.BuggyCarsUITests.testProfilePageAccessibility(BuggyCarsUITests.java:93)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:969)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:829)
+at org.testng.TestRunner.run(TestRunner.java:602)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:437)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:431)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:391)
+at org.testng.SuiteRunner.run(SuiteRunner.java:330)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1256)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1176)
+at org.testng.TestNG.runSuites(TestNG.java:1099)
+at org.testng.TestNG.run(TestNG.java:1067)
+at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:151)
+at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:192)
+at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:93)
+at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:155)
+at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:456)
+at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:169)
+at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:595)
+at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:581)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testProfilePageAccessibility -->
+        <test-method is-config="true" signature="teardown()[pri:0, instance:UITestCases.BuggyCarsUITests@4d5d943d]" started-at="2025-01-02T13:18:38 IST" name="teardown" finished-at="2025-01-02T13:18:39 IST" duration-ms="384" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:UITestCases.BuggyCarsUITests@4d5d943d]" started-at="2025-01-02T13:18:39 IST" name="setup" finished-at="2025-01-02T13:18:41 IST" duration-ms="2098" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="testResponsiveUI()[pri:0, instance:UITestCases.BuggyCarsUITests@4d5d943d]" started-at="2025-01-02T13:18:41 IST" name="testResponsiveUI" finished-at="2025-01-02T13:18:42 IST" duration-ms="792" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testResponsiveUI -->
+        <test-method is-config="true" signature="teardown()[pri:0, instance:UITestCases.BuggyCarsUITests@4d5d943d]" started-at="2025-01-02T13:18:42 IST" name="teardown" finished-at="2025-01-02T13:18:42 IST" duration-ms="238" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:UITestCases.BuggyCarsUITests@4d5d943d]" started-at="2025-01-02T13:18:42 IST" name="setup" finished-at="2025-01-02T13:18:44 IST" duration-ms="2255" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="testUserRegistration()[pri:0, instance:UITestCases.BuggyCarsUITests@4d5d943d]" started-at="2025-01-02T13:18:44 IST" name="testUserRegistration" finished-at="2025-01-02T13:18:45 IST" duration-ms="753" status="FAIL">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[expected [true] but found [false]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: expected [true] but found [false]
+at org.testng.Assert.fail(Assert.java:110)
+at org.testng.Assert.failNotEquals(Assert.java:1413)
+at org.testng.Assert.assertTrue(Assert.java:56)
+at org.testng.Assert.assertTrue(Assert.java:66)
+at UITestCases.BuggyCarsUITests.testUserRegistration(BuggyCarsUITests.java:25)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:969)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:829)
+at org.testng.TestRunner.run(TestRunner.java:602)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:437)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:431)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:391)
+at org.testng.SuiteRunner.run(SuiteRunner.java:330)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1256)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1176)
+at org.testng.TestNG.runSuites(TestNG.java:1099)
+at org.testng.TestNG.run(TestNG.java:1067)
+at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:151)
+at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:192)
+at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:93)
+at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:155)
+at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:456)
+at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:169)
+at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:595)
+at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:581)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testUserRegistration -->
+        <test-method is-config="true" signature="teardown()[pri:0, instance:UITestCases.BuggyCarsUITests@4d5d943d]" started-at="2025-01-02T13:18:45 IST" name="teardown" finished-at="2025-01-02T13:18:45 IST" duration-ms="339" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:UITestCases.BuggyCarsUITests@4d5d943d]" started-at="2025-01-02T13:18:45 IST" name="setup" finished-at="2025-01-02T13:18:47 IST" duration-ms="2106" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="testWeakPasswordRegistration()[pri:0, instance:UITestCases.BuggyCarsUITests@4d5d943d]" started-at="2025-01-02T13:18:47 IST" name="testWeakPasswordRegistration" finished-at="2025-01-02T13:18:48 IST" duration-ms="768" status="FAIL">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[expected [true] but found [false]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: expected [true] but found [false]
+at org.testng.Assert.fail(Assert.java:110)
+at org.testng.Assert.failNotEquals(Assert.java:1413)
+at org.testng.Assert.assertTrue(Assert.java:56)
+at org.testng.Assert.assertTrue(Assert.java:66)
+at UITestCases.BuggyCarsUITests.testWeakPasswordRegistration(BuggyCarsUITests.java:88)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:969)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:829)
+at org.testng.TestRunner.run(TestRunner.java:602)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:437)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:431)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:391)
+at org.testng.SuiteRunner.run(SuiteRunner.java:330)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1256)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1176)
+at org.testng.TestNG.runSuites(TestNG.java:1099)
+at org.testng.TestNG.run(TestNG.java:1067)
+at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:151)
+at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:192)
+at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:93)
+at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:155)
+at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:456)
+at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:169)
+at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:595)
+at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:581)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testWeakPasswordRegistration -->
+        <test-method is-config="true" signature="teardown()[pri:0, instance:UITestCases.BuggyCarsUITests@4d5d943d]" started-at="2025-01-02T13:18:48 IST" name="teardown" finished-at="2025-01-02T13:18:49 IST" duration-ms="331" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+      </class> <!-- UITestCases.BuggyCarsUITests -->
+      <class name="TestCases.GetBookAPITests">
+        <test-method is-config="true" signature="setup()[pri:0, instance:TestCases.GetBookAPITests@459e9125]" started-at="2025-01-02T13:18:04 IST" name="setup" finished-at="2025-01-02T13:18:05 IST" duration-ms="311" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="testGetAllBooksAsAdmin()[pri:0, instance:TestCases.GetBookAPITests@459e9125]" started-at="2025-01-02T13:18:05 IST" name="testGetAllBooksAsAdmin" finished-at="2025-01-02T13:18:06 IST" duration-ms="1684" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testGetAllBooksAsAdmin -->
+        <test-method signature="testGetAllBooksAsUser()[pri:0, instance:TestCases.GetBookAPITests@459e9125]" started-at="2025-01-02T13:18:06 IST" name="testGetAllBooksAsUser" finished-at="2025-01-02T13:18:07 IST" duration-ms="805" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testGetAllBooksAsUser -->
+        <test-method signature="testGetBookByIdAsAdmin()[pri:0, instance:TestCases.GetBookAPITests@459e9125]" started-at="2025-01-02T13:18:07 IST" name="testGetBookByIdAsAdmin" finished-at="2025-01-02T13:18:08 IST" duration-ms="795" status="FAIL">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[Expected status code is 200 expected [200] but found [404]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: Expected status code is 200 expected [200] but found [404]
+at org.testng.Assert.fail(Assert.java:110)
+at org.testng.Assert.failNotEquals(Assert.java:1413)
+at org.testng.Assert.assertEqualsImpl(Assert.java:149)
+at org.testng.Assert.assertEquals(Assert.java:131)
+at org.testng.Assert.assertEquals(Assert.java:1240)
+at TestCases.GetBookAPITests.testGetBookByIdAsAdmin(GetBookAPITests.java:73)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:969)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:829)
+at org.testng.TestRunner.run(TestRunner.java:602)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:437)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:431)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:391)
+at org.testng.SuiteRunner.run(SuiteRunner.java:330)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1256)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1176)
+at org.testng.TestNG.runSuites(TestNG.java:1099)
+at org.testng.TestNG.run(TestNG.java:1067)
+at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:151)
+at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:192)
+at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:93)
+at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:155)
+at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:456)
+at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:169)
+at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:595)
+at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:581)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testGetBookByIdAsAdmin -->
+        <test-method signature="testGetBookByIdAsRegularUser()[pri:0, instance:TestCases.GetBookAPITests@459e9125]" started-at="2025-01-02T13:18:08 IST" name="testGetBookByIdAsRegularUser" finished-at="2025-01-02T13:18:09 IST" duration-ms="725" status="FAIL">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[Expected status code is 200 expected [200] but found [403]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: Expected status code is 200 expected [200] but found [403]
+at org.testng.Assert.fail(Assert.java:110)
+at org.testng.Assert.failNotEquals(Assert.java:1413)
+at org.testng.Assert.assertEqualsImpl(Assert.java:149)
+at org.testng.Assert.assertEquals(Assert.java:131)
+at org.testng.Assert.assertEquals(Assert.java:1240)
+at TestCases.GetBookAPITests.testGetBookByIdAsRegularUser(GetBookAPITests.java:133)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:969)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:829)
+at org.testng.TestRunner.run(TestRunner.java:602)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:437)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:431)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:391)
+at org.testng.SuiteRunner.run(SuiteRunner.java:330)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1256)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1176)
+at org.testng.TestNG.runSuites(TestNG.java:1099)
+at org.testng.TestNG.run(TestNG.java:1067)
+at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:151)
+at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:192)
+at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:93)
+at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:155)
+at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:456)
+at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:169)
+at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:595)
+at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:581)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testGetBookByIdAsRegularUser -->
+        <test-method signature="testGetBookByIdAsUser()[pri:0, instance:TestCases.GetBookAPITests@459e9125]" started-at="2025-01-02T13:18:09 IST" name="testGetBookByIdAsUser" finished-at="2025-01-02T13:18:09 IST" duration-ms="741" status="FAIL">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[Expected status code is 200 expected [200] but found [403]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: Expected status code is 200 expected [200] but found [403]
+at org.testng.Assert.fail(Assert.java:110)
+at org.testng.Assert.failNotEquals(Assert.java:1413)
+at org.testng.Assert.assertEqualsImpl(Assert.java:149)
+at org.testng.Assert.assertEquals(Assert.java:131)
+at org.testng.Assert.assertEquals(Assert.java:1240)
+at TestCases.GetBookAPITests.testGetBookByIdAsUser(GetBookAPITests.java:58)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:969)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:829)
+at org.testng.TestRunner.run(TestRunner.java:602)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:437)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:431)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:391)
+at org.testng.SuiteRunner.run(SuiteRunner.java:330)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1256)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1176)
+at org.testng.TestNG.runSuites(TestNG.java:1099)
+at org.testng.TestNG.run(TestNG.java:1067)
+at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:151)
+at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:192)
+at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:93)
+at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:155)
+at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:456)
+at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:169)
+at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:595)
+at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:581)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testGetBookByIdAsUser -->
+        <test-method signature="testGetBookByInvalidIdAsAdmin()[pri:0, instance:TestCases.GetBookAPITests@459e9125]" started-at="2025-01-02T13:18:09 IST" name="testGetBookByInvalidIdAsAdmin" finished-at="2025-01-02T13:18:10 IST" duration-ms="806" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testGetBookByInvalidIdAsAdmin -->
+        <test-method signature="testGetBookByValidIdAsAdmin()[pri:0, instance:TestCases.GetBookAPITests@459e9125]" started-at="2025-01-02T13:18:10 IST" name="testGetBookByValidIdAsAdmin" finished-at="2025-01-02T13:18:11 IST" duration-ms="757" status="FAIL">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[Expected status code is 200 expected [400] but found [404]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: Expected status code is 200 expected [400] but found [404]
+at org.testng.Assert.fail(Assert.java:110)
+at org.testng.Assert.failNotEquals(Assert.java:1413)
+at org.testng.Assert.assertEqualsImpl(Assert.java:149)
+at org.testng.Assert.assertEquals(Assert.java:131)
+at org.testng.Assert.assertEquals(Assert.java:1240)
+at TestCases.GetBookAPITests.testGetBookByValidIdAsAdmin(GetBookAPITests.java:91)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:969)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:829)
+at org.testng.TestRunner.run(TestRunner.java:602)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:437)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:431)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:391)
+at org.testng.SuiteRunner.run(SuiteRunner.java:330)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1256)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1176)
+at org.testng.TestNG.runSuites(TestNG.java:1099)
+at org.testng.TestNG.run(TestNG.java:1067)
+at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:151)
+at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:192)
+at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:93)
+at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:155)
+at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:456)
+at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:169)
+at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:595)
+at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:581)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testGetBookByValidIdAsAdmin -->
+      </class> <!-- TestCases.GetBookAPITests -->
+    </test> <!-- Surefire test -->
+  </suite> <!-- Surefire suite -->
+</testng-results>
