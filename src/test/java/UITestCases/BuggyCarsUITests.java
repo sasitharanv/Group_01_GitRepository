@@ -40,5 +40,7 @@ public class BuggyCarsUITests extends BaseTest {
         Assert.assertTrue(driver.getPageSource().contains("Hi, Test"));
     }
 
+    
+
 
 }

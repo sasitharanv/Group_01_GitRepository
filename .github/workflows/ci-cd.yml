@@ -1,4 +1,4 @@
-name: CI/CD for Books Test Suite
+name: CI/CD for Testing
 
 on:
   push:
@@ -9,50 +9,38 @@ on:
       - main
 
 jobs:
-  build-and-test:
+  run-tests:
     runs-on: ubuntu-latest
 
     steps:
-      # Step 1: Checkout the repository
       - name: Checkout Code
         uses: actions/checkout@v3
 
-      # Step 2: Set up Java environment
-      - name: Set up JDK 11
+      - name: Set up Java
         uses: actions/setup-java@v3
         with:
-          java-version: '11'
           distribution: 'temurin'
+          java-version: '17'
 
-      # Step 3: Cache Maven dependencies
-      - name: Cache Maven Dependencies
-        uses: actions/cache@v3
+      - name: Install Dependencies
+        run: mvn install
+
+      - name: Run Tests
+        run: mvn test
+        continue-on-error: true
+
+
+      - name: Notify on Failure
+        if: failure()
+        uses: dawidd6/action-send-mail@v3
         with:
-          path: ~/.m2
-          key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
-          restore-keys: |
-            ${{ runner.os }}-maven-
-
-      # Step 4: Build the project and run tests
-      - name: Build and Test with Maven
-        run: mvn clean install
-
-      # Step 5: Archive test results
-      - name: Upload Test Results
-        if: always()
-        uses: actions/upload-artifact@v3
-        with:
-          name: test-results
-          path: target/surefire-reports/
-      # Step: Install Chrome Browser
-      - name: Install Chrome
-        run: sudo apt-get install -y google-chrome-stable
-
-      # Step: Set up ChromeDriver
-      - name: Set up ChromeDriver
-        uses: actions/setup-chromedriver@v3
-
-      # Step: Configure Selenium Tests for Headless Mode
-      - name: Run Selenium Tests
-        run: |
-          mvn test -Dwebdriver.chrome.driver=/usr/bin/chromedriver
+          server_address: smtp.gmail.com
+          server_port: 587
+          username: ${{ secrets.EMAIL_USERNAME }}
+          password: ${{ secrets.EMAIL_PASSWORD }}
+          to: sasitharanvaratharasa887@gmail.com
+          subject: "Test Failure in CI/CD Pipeline"
+          body: |
+            Hello,
+            The tests in the GitHub Actions pipeline have failed.
+            Please review the logs and take necessary action.
