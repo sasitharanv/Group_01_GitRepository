@@ -113,6 +113,7 @@ public class PutBookAPITests {
         Assert.assertEquals(responseEmptyAuthor.getStatusCode(), 400, "Expected status code is 400 for empty author");
     }
 
+    //Test Case 19: Update a book with another book id
     @Test
     public void testUpdateBookWithAnotherBooksId() {
 
@@ -136,6 +137,7 @@ public class PutBookAPITests {
         Assert.assertTrue(responseInvalidId.getBody().asString().contains("Book id is not matched"), "Error message should mention 'Book id is not matched'");
     }
 
+    //Test Case 20: Update a book with missing title and author
     @Test
     public void testUpdateBookWithMissingTitleAndAuthor() {
 
