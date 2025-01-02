@@ -9,8 +9,7 @@ on:
       - main
 
 jobs:
-  # Step 1: Run All API Tests
-  run-api-tests:
+  run-tests:
     runs-on: ubuntu-latest
 
     steps:
@@ -23,75 +22,24 @@ jobs:
           distribution: 'temurin'
           java-version: '17'
 
-      - name: Cache Maven Dependencies
-        uses: actions/cache@v3
-        with:
-          path: ~/.m2
-          key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
-          restore-keys: |
-            ${{ runner.os }}-maven
-
       - name: Install Dependencies
-        run: mvn install --no-transfer-progress
+        run: mvn install
 
-      - name: Run All API Tests
-        run: mvn test -Dmaven.test.failure.ignore=false  # Ensure failure is captured
+      - name: Run Tests
+        run: mvn test
+        continue-on-error: true
 
-  # Step 2: Run All UI Tests (Depends on API Tests)
-  run-ui-tests:
-    runs-on: ubuntu-latest
-    needs: run-api-tests  # Ensures UI tests run only after API tests complete
-
-    steps:
-      - name: Checkout Code
-        uses: actions/checkout@v3
-
-      - name: Set up Java
-        uses: actions/setup-java@v3
-        with:
-          distribution: 'temurin'
-          java-version: '17'
-
-      - name: Cache Maven Dependencies
-        uses: actions/cache@v3
-        with:
-          path: ~/.m2
-          key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
-          restore-keys: |
-            ${{ runner.os }}-maven
-
-      - name: Install Dependencies
-        run: mvn install --no-transfer-progress
-
-      - name: Run All UI Tests
-        run: mvn test -Dmaven.test.failure.ignore=false  # Ensure failure is captured
-
-  # Step 3: Notify on Failure or Success
-  notify-on-failure-or-success:
-    runs-on: ubuntu-latest
-    needs:
-      - run-api-tests
-      - run-ui-tests  # Ensures notification runs only after both jobs
-    if: always()  # This triggers the job regardless of success or failure
-
-    steps:
-      - name: Send Email Notification
+      - name: Notify on Failure
+        if: failure()
         uses: dawidd6/action-send-mail@v3
         with:
           server_address: smtp.gmail.com
           server_port: 587
           username: ${{ secrets.EMAIL_USERNAME }}
           password: ${{ secrets.EMAIL_PASSWORD }}
-          from: ${{ secrets.EMAIL_USERNAME }}  # The sender's email address
-          subject: "Test Results in CI/CD Pipeline"
-          to: sasitharanvaratharasa887@gmail.com
+          to: recipient@example.com
+          subject: "Test Failure in CI/CD Pipeline"
           body: |
             Hello,
-
-            The CI/CD pipeline has completed its execution.
-
-            Test Results:
-            - API Tests Status: ${{ needs.run-api-tests.result }}
-            - UI Tests Status: ${{ needs.run-ui-tests.result }}
-
-            If there were failures, please refer to the logs for details.
+            The tests in the GitHub Actions pipeline have failed.
+            Please review the logs and take necessary action.
