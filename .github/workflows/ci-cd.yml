@@ -35,7 +35,13 @@ jobs:
         run: mvn install --no-transfer-progress
 
       - name: Run All API Tests
-        run: mvn test  # Runs all tests in the project
+        run: mvn test -DfailIfNoTests=true
+
+      - name: Upload Test Results
+        uses: actions/upload-artifact@v3
+        with:
+          name: api-test-results
+          path: target/surefire-reports/
 
   # Step 2: Run All UI Tests (Depends on API Tests)
   run-ui-tests:
@@ -64,15 +70,21 @@ jobs:
         run: mvn install --no-transfer-progress
 
       - name: Run All UI Tests
-        run: mvn test  # Runs all tests, including UI tests
+        run: mvn test -DfailIfNoTests=true
 
-  # Step 3: Notify on Failure or Success
-  notify-on-failure-or-success:
+      - name: Upload Test Results
+        uses: actions/upload-artifact@v3
+        with:
+          name: ui-test-results
+          path: target/surefire-reports/
+
+  # Step 3: Notify on Failure
+  notify-on-failure:
     runs-on: ubuntu-latest
     needs:
       - run-api-tests
       - run-ui-tests  # Ensures notification runs only after both jobs
-    if: always()  # This triggers the job regardless of success or failure
+    if: failure()  # Trigger only if one of the jobs failed
 
     steps:
       - name: Send Email Notification
@@ -82,16 +94,12 @@ jobs:
           server_port: 587
           username: ${{ secrets.EMAIL_USERNAME }}
           password: ${{ secrets.EMAIL_PASSWORD }}
-          from: ${{ secrets.EMAIL_USERNAME }}  # The sender's email address
-          subject: "Test Results in CI/CD Pipeline"
+          subject: "Test Failure in CI/CD Pipeline"
           to: sasitharanvaratharasa887@gmail.com
           body: |
             Hello,
 
-            The CI/CD pipeline has completed its execution.
+            The CI/CD pipeline encountered test failures. Please review the logs and take necessary action.
 
-            Test Results:
-            - API Tests Status: ${{ needs.run-api-tests.result }}
-            - UI Tests Status: ${{ needs.run-ui-tests.result }}
-
-            Please review the logs for further details.
+            Best regards,
+            CI/CD Pipeline
