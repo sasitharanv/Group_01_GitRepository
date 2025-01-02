@@ -122,6 +122,23 @@ public class BuggyCarsUITests extends BaseTest {
         Assert.assertTrue(driver.getPageSource().contains("Comment exceeds maximum length"));
 }
 
+    @Test
+    public void testLogoutFunctionality() {
+        HomePage homePage = new HomePage(driver);
+
+        testLoginWithValidCredentials();
+        homePage.clickProfile();
+        driver.findElement(By.linkText("Logout")).click();
+
+        Assert.assertTrue(driver.getPageSource().contains("You have been logged out"));
+    }
+
+    //  Verify Page Title
+    @Test
+    public void testPageTitle() {
+        Assert.assertEquals(driver.getTitle(), "Buggy Cars Rating", "Page title is incorrect!");
+    }
+
 }
 
 
