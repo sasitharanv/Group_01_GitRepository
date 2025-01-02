@@ -1,4 +1,4 @@
-name: Java CI with Allure Report CSV Email Notification
+name: Java CI with Allure Report Email Notification
 
 on:
   push:
@@ -38,50 +38,13 @@ jobs:
       - name: Run Tests with Maven
         run: mvn clean test
 
-      # Step 5: Generate Allure Report JSON
-      - name: Generate Allure JSON Results
+      # Step 5: Generate Allure Report
+      - name: Generate Allure Report
         run: |
           mvn allure:report
-          cp -r target/allure-results allure-results
+          zip -r allure-report.zip target/site/allure-report
 
-      # Step 6: Convert Allure Results to CSV
-      - name: Convert Allure JSON to CSV
-        run: |
-          mkdir csv-report
-          python3 -c "
-  import json
-  import csv
-  import os
-  
-  # Read Allure JSON results
-  input_dir = 'allure-results'
-  output_file = 'csv-report/allure-report.csv'
-  data = []
-
-for file in os.listdir(input_dir):
-  if file.endswith('.json'):
-    with open(os.path.join(input_dir, file), 'r') as f:
-      try:
-        data.append(json.load(f))
-      except json.JSONDecodeError:
-        continue
-
-# Write to CSV
-with open(output_file, 'w', newline='') as csvfile:
-  fieldnames = ['name', 'status', 'start', 'stop', 'description']
-  writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
-  writer.writeheader()
-  for entry in data:
-    writer.writerow({
-    'name': entry.get('name', 'N/A'),
-    'status': entry.get('status', 'N/A'),
-    'start': entry.get('start', 'N/A'),
-    'stop': entry.get('stop', 'N/A'),
-    'description': entry.get('description', 'N/A'),
-  })
-    "
-
-      # Step 7: Send Email Notification with CSV Attachment
+      # Step 6: Send Email Notification with Allure Report
       - name: Send Email Notification
         if: always()
         uses: dawidd6/action-send-mail@v3
@@ -90,17 +53,14 @@ with open(output_file, 'w', newline='') as csvfile:
           server_port: 587
           username: ${{ secrets.EMAIL_USERNAME }}
           password: ${{ secrets.EMAIL_PASSWORD }}
-          subject: "Java CI Build Report with Allure CSV for ${{ github.repository }}"
-    body: |
-      ## Build Details
-      - **Build Status:** ${{ job.status }}
-      - **Repository:** ${{ github.repository }}
-      - **Branch:** ${{ github.ref_name }}
-      - **Commit:** ${{ github.sha }}
-      - **Run Details:** [View Workflow](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }})
-      
-      The Allure results have been attached as a CSV file.
-
-    to: sasitharanvaratharasa887@gmail.com
-    from: sasvaratharasa540@gmail.com
-    attachments: csv-report/allure-report.csv
+          subject: 'Build Notification: ${{ github.repository }}'
+          body: |
+            Build Status: ${{ job.status }}
+            Repository: ${{ github.repository }}
+            Branch: ${{ github.ref_name }}
+            Commit: ${{ github.sha }}
+            See details: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+            The Allure report has been attached to this email.
+          to: sasitharanvaratharasa887@gmail.com
+          from: sasvaratharasa540@gmail.com
+          attachments: allure-report.zip
