@@ -1,16 +1,6 @@
-name: CI/CD for Testing
-
-on:
-  push:
-    branches:
-      - main
-  pull_request:
-    branches:
-      - main
-
 jobs:
-  # Step 1: Run All API Tests
-  run-api-tests:
+  # Single Job to Run All Tests
+  run-tests:
     runs-on: ubuntu-latest
 
     steps:
@@ -34,76 +24,38 @@ jobs:
       - name: Install Dependencies
         run: mvn install --no-transfer-progress
 
-      - name: Run All API Tests
+      - name: Run All Tests
+        id: run-tests
         run: mvn test -DfailIfNoTests=true
 
-      - name: Parse Test Results
-        id: api-test-summary
+      - name: Parse Test Failures
+        id: parse-failures
         run: |
           mkdir -p summary
-          grep -E "Tests run:.*Failures:.*Errors:.*Skipped:.*" target/surefire-reports/*.txt > summary/api-test-summary.txt
+          grep -A 5 "FAILURE" target/surefire-reports/*.txt > summary/detailed-failures.txt || true
 
       - name: Upload Test Results
         uses: actions/upload-artifact@v3
         with:
-          name: api-test-results
+          name: detailed-test-results
           path: target/surefire-reports/
 
-  # Step 2: Run All UI Tests (Depends on API Tests)
-  run-ui-tests:
-    runs-on: ubuntu-latest
-    needs: run-api-tests  # Ensures UI tests run only after API tests complete
-
-    steps:
-      - name: Checkout Code
-        uses: actions/checkout@v3
-
-      - name: Set up Java
-        uses: actions/setup-java@v3
-        with:
-          distribution: 'temurin'
-          java-version: '17'
-
-      - name: Cache Maven Dependencies
-        uses: actions/cache@v3
-        with:
-          path: ~/.m2
-          key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
-          restore-keys: |
-            ${{ runner.os }}-maven
-
-      - name: Install Dependencies
-        run: mvn install --no-transfer-progress
-
-      - name: Run All UI Tests
-        run: mvn test -DfailIfNoTests=true
-
-      - name: Parse Test Results
-        id: ui-test-summary
+      - name: Check Test Results
         run: |
-          mkdir -p summary
-          grep -E "Tests run:.*Failures:.*Errors:.*Skipped:.*" target/surefire-reports/*.txt > summary/ui-test-summary.txt
+          if grep -q "FAILURE" target/surefire-reports/*.txt; then
+            exit 1
+          fi
 
-      - name: Upload Test Results
-        uses: actions/upload-artifact@v3
-        with:
-          name: ui-test-results
-          path: target/surefire-reports/
-
-  # Step 3: Notify on Failure with Detailed Report
+  # Job to Notify on Failure
   notify-on-failure:
     runs-on: ubuntu-latest
-    needs:
-      - run-api-tests
-      - run-ui-tests  # Ensures notification runs only after both jobs
-    if: failure()  # Trigger only if one of the jobs failed
+    needs: run-tests
+    if: failure()  # Notify only if tests fail
 
     steps:
-      - name: Collect Test Summaries
+      - name: Fetch Detailed Test Failures
         run: |
-          mkdir -p summary
-          cat run-api-tests/summary/api-test-summary.txt > summary/combined-summary.txt || true
-          cat run-ui-tests/summary/ui-test-summary.txt >> summary/combined-summary.txt || true
+          cat run-tests/summary/detailed-failures.txt > summary/failures-summary.txt || true
 
       - name: Send Email Notification
         uses: dawidd6/action-send-mail@v3
@@ -117,9 +69,9 @@ jobs:
           body: |
             Hello,
 
-            The CI/CD pipeline encountered test failures. Below is the test summary:
+            The CI/CD pipeline encountered test failures. Below is a detailed failure report:
 
-            $(cat summary/combined-summary.txt)
+            $(cat summary/failures-summary.txt)
 
             Please review the logs and take necessary action.
 
