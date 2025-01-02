@@ -1,4 +1,4 @@
-name: Java CI with Allure Report and Email Notification
+name: Java CI with Email Notification
 
 on:
   push:
@@ -37,22 +37,15 @@ jobs:
       # Step 4: Build and test the project
       - name: Build with Maven
         id: build
-        run: |
-          mvn clean install -B
-          mvn allure:report
+        run: mvn clean install -B
         continue-on-error: true
 
-      # Step 5: Compress Allure Report
-      - name: Compress Allure Report
-        if: always()
-        run: zip -r allure-report.zip target/site/allure-report
-
-      # Step 6: Send Email Notification with Allure Report
+      # Step 5: Send email notification
       - name: Send Email Notification
         if: always()
         uses: dawidd6/action-send-mail@v3
         with:
-          server_address: smtp.gmail.com
+          server_address: smtp.gmail.com # Use your SMTP server
           server_port: 587
           username: ${{ secrets.EMAIL_USERNAME }}
           password: ${{ secrets.EMAIL_PASSWORD }}
@@ -65,4 +58,3 @@ jobs:
             See details: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
           to: sasitharanvaratharasa887@gmail.com
           from: sasvaratharasa540@gmail.com
-          attachments: allure-report.zip
