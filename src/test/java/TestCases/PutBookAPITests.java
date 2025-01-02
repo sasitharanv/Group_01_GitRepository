@@ -2,6 +2,8 @@ package TestCases;
 
 import Factory.UserFactory;
 import Singleton.RestAssuredClient;
+import io.qameta.allure.Epic;
+import io.qameta.allure.Feature;
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
 import org.testng.Assert;
@@ -10,7 +12,8 @@ import org.testng.annotations.Test;
 
 import java.util.HashMap;
 import java.util.Map;
-
+@Epic("Book API Management")
+@Feature("Update Book API")
 public class PutBookAPITests {
 
     @BeforeClass
