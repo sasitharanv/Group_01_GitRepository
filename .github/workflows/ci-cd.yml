@@ -1,5 +1,3 @@
-name: Test Execution and Reporting
-
 jobs:
   run-tests:
     runs-on: ubuntu-latest
@@ -24,52 +22,29 @@ jobs:
 
       - name: Run Tests
         id: test
+        run: mvn test -DfailIfNoTests=true
+
+      - name: Debug Surefire Reports
         run: |
-          mvn test -DfailIfNoTests=true || true
-          echo "::set-output name=exit_code::$?"
+          echo "Listing Surefire Reports:"
+          ls -l target/surefire-reports/ || echo "No Surefire reports found"
 
       - name: Generate Test Report
-        if: always()
         run: |
           echo "# Test Execution Report" > test-report.txt
-          echo "Date: $(date)" >> test-report.txt
-          echo "" >> test-report.txt
-          
-          echo "## Test Summary" >> test-report.txt
-          total=$(grep -c "Tests run:" target/surefire-reports/*.txt)
+          total=$(grep -c "Tests run:" target/surefire-reports/*.txt || echo "0")
           failures=$(grep -c "FAILURE" target/surefire-reports/*.txt || echo "0")
           passed=$((total - failures))
           echo "- Total Tests: $total" >> test-report.txt
           echo "- Passed: $passed" >> test-report.txt
           echo "- Failed: $failures" >> test-report.txt
-          echo "" >> test-report.txt
-          
-          echo "## Failed Tests Details" >> test-report.txt
-          echo "" >> test-report.txt
-          
-          # Extract Book API Test Failures
-          echo "### Book API Tests" >> test-report.txt
-          echo "#### GET Endpoints" >> test-report.txt
-          grep -B1 -A1 "GetBookAPI.*FAILED" target/surefire-reports/*.txt | sed 's/^/    /' >> test-report.txt
-          echo "" >> test-report.txt
-          
-          echo "#### PUT Endpoints" >> test-report.txt
-          grep -B1 -A1 "PutBookAPI.*FAILED" target/surefire-reports/*.txt | sed 's/^/    /' >> test-report.txt
-          echo "" >> test-report.txt
-          
-          # Extract UI Test Failures
-          echo "### UI Tests" >> test-report.txt
-          grep -B1 -A1 "BuggyCarsUI.*FAILED" target/surefire-reports/*.txt | sed 's/^/    /' >> test-report.txt
-          echo "" >> test-report.txt
-          
-          # Add error details
-          echo "## Detailed Error Messages" >> test-report.txt
-          echo '```' >> test-report.txt
-          grep -A 3 "^Running.*Test" target/surefire-reports/*.txt | grep -B 2 "FAILURE" >> test-report.txt
-          echo '```' >> test-report.txt
+
+      - name: Debug Test Report
+        run: |
+          echo "Test Report Content:"
+          cat test-report.txt || echo "Test report not found"
 
       - name: Send Email Report
-        if: always()
         uses: dawidd6/action-send-mail@v3
         with:
           server_address: smtp.gmail.com
@@ -83,14 +58,9 @@ jobs:
           content_type: text/markdown
 
       - name: Upload Test Report
-        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: test-report
           path: |
             test-report.txt
             target/surefire-reports/
-
-      - name: Check Test Results
-        if: steps.test.outputs.exit_code != '0'
-        run: exit 1

@@ -2,6 +2,7 @@ package TestCases;
 
 import Factory.UserFactory;
 import Singleton.RestAssuredClient;
+import io.qameta.allure.Step;
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
 import org.testng.Assert;
@@ -19,7 +20,9 @@ public class GetBookAPITests {
 
 
 
+
     @Test
+    @Step("testGetAllBooksAsAdmin")
     public void testGetAllBooksAsAdmin() {
         // Get credentials for admin user
         Map<String, String> admin = UserFactory.getUser("admin");
