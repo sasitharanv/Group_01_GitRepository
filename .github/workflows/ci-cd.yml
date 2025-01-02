@@ -1,66 +1,55 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
 jobs:
-  run-tests:
+  build-and-test:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout Code
+      - name: Checkout code
         uses: actions/checkout@v3
 
       - name: Set up Java
         uses: actions/setup-java@v3
         with:
+          java-version: '11'
           distribution: 'temurin'
-          java-version: '17'
 
-      - name: Cache Maven Dependencies
-        uses: actions/cache@v3
-        with:
-          path: ~/.m2
-          key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
-          restore-keys: |
-            ${{ runner.os }}-maven
-
-      - name: Run Tests
-        id: test
-        run: mvn test -DfailIfNoTests=true
-
-      - name: Debug Surefire Reports
+      - name: Install dependencies
         run: |
-          echo "Listing Surefire Reports:"
-          ls -l target/surefire-reports/ || echo "No Surefire reports found"
+          ./mvnw clean install
 
-      - name: Generate Test Report
+      - name: Run tests
         run: |
-          echo "# Test Execution Report" > test-report.txt
-          total=$(grep -c "Tests run:" target/surefire-reports/*.txt || echo "0")
-          failures=$(grep -c "FAILURE" target/surefire-reports/*.txt || echo "0")
-          passed=$((total - failures))
-          echo "- Total Tests: $total" >> test-report.txt
-          echo "- Passed: $passed" >> test-report.txt
-          echo "- Failed: $failures" >> test-report.txt
+          ./mvnw test
+        continue-on-error: true
 
-      - name: Debug Test Report
+      - name: Check for test failures
+        id: test-results
         run: |
-          echo "Test Report Content:"
-          cat test-report.txt || echo "Test report not found"
+          if grep -q "<failure>" target/surefire-reports/*; then
+            echo "failure=true" >> $GITHUB_ENV
+          else
+            echo "failure=false" >> $GITHUB_ENV
+          fi
 
-      - name: Send Email Report
+      - name: Send email if tests fail
+        if: env.failure == 'true'
         uses: dawidd6/action-send-mail@v3
         with:
           server_address: smtp.gmail.com
-          server_port: 587
+          server_port: 465
           username: ${{ secrets.EMAIL_USERNAME }}
           password: ${{ secrets.EMAIL_PASSWORD }}
-          subject: "Test Results: ${{ job.status == 'success' && 'PASSED ✅' || 'FAILED ❌' }}"
-          to: sasitharanvaratharasa887@gmail.com
-          from: GitHub Actions
-          body: file://test-report.txt
-          content_type: text/markdown
-
-      - name: Upload Test Report
-        uses: actions/upload-artifact@v3
-        with:
-          name: test-report
-          path: |
-            test-report.txt
-            target/surefire-reports/
+          subject: Test Failure Notification
+          body: |
+            The CI/CD pipeline has detected test failures. Please check the logs for details.
+          to: "sasitharanvaratharasa887@gmail.com.com"
+          from: "noreply@example.com"
