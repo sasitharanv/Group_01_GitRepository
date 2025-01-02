@@ -11,7 +11,6 @@
   <url>http://maven.apache.org</url>
 
   <properties>
-    <maven.test.failure.ignore>true</maven.test.failure.ignore>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
 
@@ -92,11 +91,6 @@
       <artifactId>webdrivermanager</artifactId>
       <version>5.5.3</version>
     </dependency>
-    <dependency>
-      <groupId>io.qameta.allure</groupId>
-      <artifactId>allure-testng</artifactId>
-      <version>2.20.1</version>
-    </dependency>
 
 
     <dependency>
@@ -116,24 +110,6 @@
           <target>11</target>
         </configuration>
       </plugin>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-surefire-plugin</artifactId>
-        <version>3.0.0-M8</version>
-        <configuration>
-          <testFailureIgnore>false</testFailureIgnore>
-        </configuration>
-      </plugin>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-surefire-report-plugin</artifactId>
-        <version>3.0.0-M7</version>
-        <configuration>
-          <outputDirectory>target/surefire-reports/html</outputDirectory>
-        </configuration>
-      </plugin>
-
-
     </plugins>
   </build>
 </project>
