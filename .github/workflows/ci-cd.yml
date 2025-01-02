@@ -1,4 +1,4 @@
-name: CI/CD Pipeline
+name: CI/CD Pipeline with Email Notification
 
 on:
   push:
@@ -40,7 +40,14 @@ jobs:
             echo "failure=false" >> $GITHUB_ENV
           fi
 
-      - name: Send email if tests fail
+      - name: Archive test reports
+        if: env.failure == 'true'
+        uses: actions/upload-artifact@v3
+        with:
+          name: Test-Reports
+          path: target/surefire-reports
+
+      - name: Send email with reports
         if: env.failure == 'true'
         uses: dawidd6/action-send-mail@v3
         with:
@@ -50,6 +57,8 @@ jobs:
           password: ${{ secrets.EMAIL_PASSWORD }}
           subject: Test Failure Notification
           body: |
-            The CI/CD pipeline has detected test failures. Please check the logs for details.
-          to: "sasitharanvaratharasa887@gmail.com.com"
+            The CI/CD pipeline has detected test failures.
+            Test reports are attached for review.
+          to: "recipient@example.com"
           from: "noreply@example.com"
+          attachments: target/surefire-reports/testng-results.xml
