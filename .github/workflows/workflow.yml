@@ -1,4 +1,4 @@
-name: Maven Test and Allure Report
+name: RestAssured, Selenium, and Allure CI/CD
 
 on:
   push:
@@ -6,11 +6,11 @@ on:
       - main
 
 jobs:
-  build-and-test:
+  build-test-report:
     runs-on: ubuntu-latest
 
     steps:
-      # Step 1: Checkout the code
+      # Step 1: Checkout the repository
       - name: Checkout code
         uses: actions/checkout@v3
 
@@ -21,7 +21,6 @@ jobs:
           java-version: '11'
           distribution: 'temurin'
 
-
       # Step 3: Cache Maven dependencies
       - name: Cache Maven dependencies
         uses: actions/cache@v3
@@ -31,15 +30,15 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-m2
 
-      # Step 4: Run tests and generate Allure report
+      # Step 4: Run Maven tests and generate Allure results
       - name: Run tests and generate Allure results
         run: |
-          mvn test
+          mvn clean test
           mvn allure:report
 
       # Step 5: Upload Allure report to GitHub Pages
-      - name: Upload Allure report to GitHub Pages
+      - name: Publish Allure Report to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }} # Use default GITHUB_TOKEN or PAT
+          github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: target/site/allure-maven-plugin
