@@ -22,6 +22,7 @@ public class PutBookAPITests {
         RestAssuredClient.getInstance();
     }
 
+    //TC13: Test Update Book details by valid admin credentials
     @Test
     public void testUpdateBookWithValidDataAsAdmin() {
         // Get credentials for admin user
@@ -29,25 +30,25 @@ public class PutBookAPITests {
 
         // Prepare valid book data
         Map<String, Object> bookData = new HashMap<>();
-        bookData.put("id", 1);
-        bookData.put("title", "UpdatedBookTitle102");
-        bookData.put("author", "UpdatedAuthor101");
+        bookData.put("id", 3);
+        bookData.put("title", "Squid game_2");
+        bookData.put("author", "Nicola");
 
         Response response = RestAssured.given()
                 .auth().basic(admin.get("username"), admin.get("password"))
                 .contentType("application/json")
                 .body(bookData)
-                .put("/api/books/1");
+                .put("/api/books/3");
 
         System.out.println("Response Status Code: " + response.getStatusCode());
         response.prettyPrint(); // Print response body
 
-        Assert.assertEquals(response.getStatusCode(), 200, "Expected status code is 200");
-        Assert.assertEquals(response.jsonPath().getString("title"), "UpdatedBookTitle102", "Book title should be updated");
-        Assert.assertEquals(response.jsonPath().getString("author"), "UpdatedAuthor101", "Book author should be updated");
+        Assert.assertEquals(response.getStatusCode(), 200, "Expected status code is 200 Book details updated successfully");
+        Assert.assertEquals(response.jsonPath().getString("title"), "Squid game_2", "Book title should be updated");
+        Assert.assertEquals(response.jsonPath().getString("author"), "Nicola", "Book author should be updated");
     }
 
-    // TC13: Update a Book with Valid Data (User)
+    // TC14: Update a Book with Valid User credentials
 
     @Test
     public void testUpdateBookWithValidDataAsUser() {
@@ -56,21 +57,21 @@ public class PutBookAPITests {
 
         // Prepare valid book data
         Map<String, Object> bookData = new HashMap<>();
-        bookData.put("id", 1);
-        bookData.put("title", "Updated Book Title");
-        bookData.put("author", "Updated Author");
+        bookData.put("id", 3);
+        bookData.put("title", "Frozen prince4");
+        bookData.put("author", "Hentry williums");
 
         Response response = RestAssured.given()
                 .auth().basic(user.get("username"), user.get("password"))
                 .contentType("application/json")
                 .body(bookData)
-                .put("/api/books/1");
+                .put("/api/books/3");
 
-        Assert.assertEquals(response.getStatusCode(), 403, "Expected status code is 403");
-        Assert.assertTrue(response.asString().contains("Forbidden"), "Response should indicate forbidden access");
+        Assert.assertEquals(response.getStatusCode(), 403, "Expected status code is 403. You are not to authorized to do this action");
+        Assert.assertTrue(response.asString().contains("User is not permitted"), "Response should indicate 'User is not permitted'");
     }
 
-    //TC14: Update a Book with Non-existent ID (Admin)
+    //TC15: Update a Book with Non-existent ID (Admin)
 
     @Test
     public void testUpdateBookWithInvalidIdAsAdmin() {
@@ -80,8 +81,8 @@ public class PutBookAPITests {
         // Prepare valid book data
         Map<String, Object> bookData = new HashMap<>();
         bookData.put("id", 999); // Non-existent ID
-        bookData.put("title", "Non-existent Book Title");
-        bookData.put("author", "Non-existent Author");
+        bookData.put("title", "Miracle Stories ");
+        bookData.put("author", "Mr Invisible");
 
         Response response = RestAssured.given()
                 .auth().basic(admin.get("username"), admin.get("password"))
@@ -89,7 +90,7 @@ public class PutBookAPITests {
                 .body(bookData)
                 .put("/api/books/999");
 
-        Assert.assertEquals(response.getStatusCode(), 404, "Expected status code is 404");
+        Assert.assertEquals(response.getStatusCode(), 404, "Expected status code is 404 Book does not found");
         Assert.assertTrue(response.asString().contains("Book not found"), "Response should indicate book not found");
 
     }
