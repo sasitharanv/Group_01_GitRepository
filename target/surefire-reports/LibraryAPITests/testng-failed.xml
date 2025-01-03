@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [LibraryAPITests]" verbose="0">
+  <listeners>
+    <listener class-name="io.qameta.allure.testng.AllureTestNg"/>
+  </listeners>
+  <test thread-count="5" name="APITestSuite(failed)" verbose="0">
+    <classes>
+      <class name="TestCases.GetBookAPITests">
+        <methods>
+          <include name="testGetBookByIdAsAdmin"/>
+          <include name="testGetBookByIdAsRegularUser"/>
+          <include name="testGetBookByValidIdAsAdmin"/>
+          <include name="testGetBookByIdAsUser"/>
+          <include name="setup"/>
+        </methods>
+      </class> <!-- TestCases.GetBookAPITests -->
+      <class name="TestCases.PutBookAPITests">
+        <methods>
+          <include name="testUpdateBookWithValidDataAsAdmin"/>
+          <include name="testUpdateBookWithMissingOrInvalidTitleAsAdmin"/>
+          <include name="testUpdateBookWithNoneParametersAsAdmin"/>
+          <include name="testUpdateBookWithEmptyAuthor"/>
+          <include name="testUpdateBookWithAnotherBooksTitleAsAdmin"/>
+          <include name="testUpdateBookWithValidDataAsUser"/>
+          <include name="setup"/>
+        </methods>
+      </class> <!-- TestCases.PutBookAPITests -->
+      <class name="TestCases.DeleteBookAPITests">
+        <methods>
+          <include name="testDeleteBookWithValidIdAsAdmin"/>
+          <include name="setup"/>
+          <include name="testDeleteBookWithInvalidIdAsAdmin"/>
+          <include name="testDeleteBookAsUser"/>
+        </methods>
+      </class> <!-- TestCases.DeleteBookAPITests -->
+    </classes>
+  </test> <!-- APITestSuite(failed) -->
+  <test thread-count="5" name="UI Tests(failed)" verbose="0">
+    <classes>
+      <class name="UITestCases.BuggyCarsUITests">
+        <methods>
+          <include name="testCommentCharacterLimit"/>
+          <include name="testDuplicateRegistration"/>
+          <include name="setup"/>
+          <include name="testMissingFieldsInRegistration"/>
+          <include name="testUserRegistration"/>
+          <include name="testProfilePageAccessibility"/>
+          <include name="testWeakPasswordRegistration"/>
+          <include name="testLoginWithValidCredentials"/>
+          <include name="teardown"/>
+        </methods>
+      </class> <!-- UITestCases.BuggyCarsUITests -->
+    </classes>
+  </test> <!-- UI Tests(failed) -->
+</suite> <!-- Failed suite [LibraryAPITests] -->

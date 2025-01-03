@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <suite name="LibraryAPITests">
+    <listeners>
+        <!-- Allure TestNG Listener -->
+        <listener class-name="io.qameta.allure.testng.AllureTestNg" />
+    </listeners>
+
     <test name="APITestSuite">
         <classes>
             <class name="TestCases.GetBookAPITests"/>
@@ -8,6 +13,7 @@
             <class name="TestCases.DeleteBookAPITests"/>
         </classes>
     </test>
+
     <test name="UI Tests">
         <classes>
             <class name="UITestCases.BuggyCarsUITests"/>

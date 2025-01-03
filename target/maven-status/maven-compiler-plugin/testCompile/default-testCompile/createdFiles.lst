@@ -1,2 +1,11 @@
 TestCases\DeleteBookAPITests.class
+TestCases\PostBookAPITests.class
+UITestCases\BaseTest.class
+Factory\UserFactory.class
 TestCases\PutBookAPITests.class
+UITestCases\BuggyCarsUITests.class
+Pages\CarDetailsPage.class
+Pages\RegisterPage.class
+Pages\LoginPage.class
+Pages\HomePage.class
+TestCases\GetBookAPITests.class

@@ -1,7 +1,11 @@
 H:\Group_01_GitRepository\src\test\java\Factory\UserFactory.java
+H:\Group_01_GitRepository\src\test\java\Pages\RegisterPage.java
 H:\Group_01_GitRepository\src\test\java\TestCases\DeleteBookAPITests.java
 H:\Group_01_GitRepository\src\test\java\TestCases\PostBookAPITests.java
+H:\Group_01_GitRepository\src\test\java\Pages\LoginPage.java
 H:\Group_01_GitRepository\src\test\java\UITestCases\BuggyCarsUITests.java
+H:\Group_01_GitRepository\src\test\java\Pages\HomePage.java
 H:\Group_01_GitRepository\src\test\java\TestCases\GetBookAPITests.java
 H:\Group_01_GitRepository\src\test\java\TestCases\PutBookAPITests.java
 H:\Group_01_GitRepository\src\test\java\UITestCases\BaseTest.java
+H:\Group_01_GitRepository\src\test\java\Pages\CarDetailsPage.java

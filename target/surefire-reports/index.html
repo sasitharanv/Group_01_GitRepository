@@ -1,0 +1,1108 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+  <meta charset='utf-8'>
+  <title>TestNG reports</title>
+
+    <link type="text/css" href="testng-reports1.css" rel="stylesheet" id="ultra" />
+    <link type="text/css" href="testng-reports.css" rel="stylesheet" id="retro" disabled="false"/>
+    <script type="text/javascript" src="jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="testng-reports.js"></script>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type='text/javascript'>
+      google.load('visualization', '1', {packages:['table']});
+      google.setOnLoadCallback(drawTable);
+      var suiteTableInitFunctions = new Array();
+      var suiteTableData = new Array();
+    </script>
+    <!--
+      <script type="text/javascript" src="jquery-ui/js/jquery-ui-1.8.16.custom.min.js"></script>
+     -->
+  </head>
+
+  <body>    <div class="top-banner-root">
+      <span class="top-banner-title-font">Test results</span>
+      <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
+      <br/>
+      <span class="top-banner-font-1">1 suite, 20 failed tests</span>
+    </div> <!-- top-banner-root -->
+    <div class="navigator-root">
+      <div class="navigator-suite-header">
+        <span>All suites</span>
+        <a href="#" title="Collapse/expand all the suites" class="collapse-all-link">
+          <img src="collapseall.gif" class="collapse-all-icon">
+          </img> <!-- collapse-all-icon -->
+        </a> <!-- collapse-all-link -->
+      </div> <!-- navigator-suite-header -->
+      <div class="suite">
+        <div class="rounded-window">
+          <div class="suite-header light-rounded-window-top">
+            <a href="#" panel-name="suite-LibraryAPITests" class="navigator-link">
+              <span class="suite-name border-failed">LibraryAPITests</span>
+            </a> <!-- navigator-link -->
+          </div> <!-- suite-header light-rounded-window-top -->
+          <div class="navigator-suite-content">
+            <div class="suite-section-title">
+              <span>Info</span>
+            </div> <!-- suite-section-title -->
+            <div class="suite-section-content">
+              <ul>
+                <li>
+                  <a href="#" panel-name="test-xml-LibraryAPITests" class="navigator-link ">
+                    <span>H:\Group_01_GitRepository\src\test\resources\testng.xml</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="testlist-LibraryAPITests" class="navigator-link ">
+                    <span class="test-stats">2 tests</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="group-LibraryAPITests" class="navigator-link ">
+                    <span>0 groups</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="times-LibraryAPITests" class="navigator-link ">
+                    <span>Times</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="reporter-LibraryAPITests" class="navigator-link ">
+                    <span>Reporter output</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="ignored-methods-LibraryAPITests" class="navigator-link ">
+                    <span>Ignored methods</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="chronological-LibraryAPITests" class="navigator-link ">
+                    <span>Chronological view</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+              </ul>
+            </div> <!-- suite-section-content -->
+            <div class="result-section">
+              <div class="suite-section-title">
+                <span>Results</span>
+              </div> <!-- suite-section-title -->
+              <div class="suite-section-content">
+                <ul>
+                  <li>
+                    <span class="method-stats">29 methods, 20 failed,   9 passed</span>
+                  </li>
+                  <li>
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-LibraryAPITests" class="hide-methods failed suite-LibraryAPITests"> (hide)</a> <!-- hide-methods failed suite-LibraryAPITests -->
+                      <a href="#" panel-name="suite-LibraryAPITests" class="show-methods failed suite-LibraryAPITests"> (show)</a> <!-- show-methods failed suite-LibraryAPITests -->
+                    </span>
+                    <div class="method-list-content failed suite-LibraryAPITests">
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-LibraryAPITests" title="UITestCases.BuggyCarsUITests" class="method navigator-link" hash-for-method="testCommentCharacterLimit">testCommentCharacterLimit</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-LibraryAPITests" title="TestCases.DeleteBookAPITests" class="method navigator-link" hash-for-method="testDeleteBookAsUser">testDeleteBookAsUser</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-LibraryAPITests" title="TestCases.DeleteBookAPITests" class="method navigator-link" hash-for-method="testDeleteBookWithInvalidIdAsAdmin">testDeleteBookWithInvalidIdAsAdmin</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-LibraryAPITests" title="TestCases.DeleteBookAPITests" class="method navigator-link" hash-for-method="testDeleteBookWithValidIdAsAdmin">testDeleteBookWithValidIdAsAdmin</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-LibraryAPITests" title="UITestCases.BuggyCarsUITests" class="method navigator-link" hash-for-method="testDuplicateRegistration">testDuplicateRegistration</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-LibraryAPITests" title="TestCases.GetBookAPITests" class="method navigator-link" hash-for-method="testGetBookByIdAsAdmin">testGetBookByIdAsAdmin</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-LibraryAPITests" title="TestCases.GetBookAPITests" class="method navigator-link" hash-for-method="testGetBookByIdAsRegularUser">testGetBookByIdAsRegularUser</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-LibraryAPITests" title="TestCases.GetBookAPITests" class="method navigator-link" hash-for-method="testGetBookByIdAsUser">testGetBookByIdAsUser</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-LibraryAPITests" title="TestCases.GetBookAPITests" class="method navigator-link" hash-for-method="testGetBookByValidIdAsAdmin">testGetBookByValidIdAsAdmin</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-LibraryAPITests" title="UITestCases.BuggyCarsUITests" class="method navigator-link" hash-for-method="testLoginWithValidCredentials">testLoginWithValidCredentials</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-LibraryAPITests" title="UITestCases.BuggyCarsUITests" class="method navigator-link" hash-for-method="testMissingFieldsInRegistration">testMissingFieldsInRegistration</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-LibraryAPITests" title="UITestCases.BuggyCarsUITests" class="method navigator-link" hash-for-method="testProfilePageAccessibility">testProfilePageAccessibility</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-LibraryAPITests" title="TestCases.PutBookAPITests" class="method navigator-link" hash-for-method="testUpdateBookWithAnotherBooksTitleAsAdmin">testUpdateBookWithAnotherBooksTitleAsAdmin</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-LibraryAPITests" title="TestCases.PutBookAPITests" class="method navigator-link" hash-for-method="testUpdateBookWithEmptyAuthor">testUpdateBookWithEmptyAuthor</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-LibraryAPITests" title="TestCases.PutBookAPITests" class="method navigator-link" hash-for-method="testUpdateBookWithMissingOrInvalidTitleAsAdmin">testUpdateBookWithMissingOrInvalidTitleAsAdmin</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-LibraryAPITests" title="TestCases.PutBookAPITests" class="method navigator-link" hash-for-method="testUpdateBookWithNoneParametersAsAdmin">testUpdateBookWithNoneParametersAsAdmin</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-LibraryAPITests" title="TestCases.PutBookAPITests" class="method navigator-link" hash-for-method="testUpdateBookWithValidDataAsAdmin">testUpdateBookWithValidDataAsAdmin</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-LibraryAPITests" title="TestCases.PutBookAPITests" class="method navigator-link" hash-for-method="testUpdateBookWithValidDataAsUser">testUpdateBookWithValidDataAsUser</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-LibraryAPITests" title="UITestCases.BuggyCarsUITests" class="method navigator-link" hash-for-method="testUserRegistration">testUserRegistration</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-LibraryAPITests" title="UITestCases.BuggyCarsUITests" class="method navigator-link" hash-for-method="testWeakPasswordRegistration">testWeakPasswordRegistration</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content failed suite-LibraryAPITests -->
+                  </li>
+                  <li>
+                    <span class="method-list-title passed">Passed methods</span>
+                    <span class="show-or-hide-methods passed">
+                      <a href="#" panel-name="suite-LibraryAPITests" class="hide-methods passed suite-LibraryAPITests"> (hide)</a> <!-- hide-methods passed suite-LibraryAPITests -->
+                      <a href="#" panel-name="suite-LibraryAPITests" class="show-methods passed suite-LibraryAPITests"> (show)</a> <!-- show-methods passed suite-LibraryAPITests -->
+                    </span>
+                    <div class="method-list-content passed suite-LibraryAPITests">
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-LibraryAPITests" title="UITestCases.BuggyCarsUITests" class="method navigator-link" hash-for-method="testAccessibilityOfLinks">testAccessibilityOfLinks</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-LibraryAPITests" title="UITestCases.BuggyCarsUITests" class="method navigator-link" hash-for-method="testBrokenLinksOnHomepage">testBrokenLinksOnHomepage</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-LibraryAPITests" title="TestCases.GetBookAPITests" class="method navigator-link" hash-for-method="testGetAllBooksAsAdmin">testGetAllBooksAsAdmin</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-LibraryAPITests" title="TestCases.GetBookAPITests" class="method navigator-link" hash-for-method="testGetAllBooksAsUser">testGetAllBooksAsUser</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-LibraryAPITests" title="TestCases.GetBookAPITests" class="method navigator-link" hash-for-method="testGetBookByInvalidIdAsAdmin">testGetBookByInvalidIdAsAdmin</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-LibraryAPITests" title="UITestCases.BuggyCarsUITests" class="method navigator-link" hash-for-method="testResponsiveUI">testResponsiveUI</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-LibraryAPITests" title="TestCases.PutBookAPITests" class="method navigator-link" hash-for-method="testUpdateBookWithAnotherBooksId">testUpdateBookWithAnotherBooksId</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-LibraryAPITests" title="TestCases.PutBookAPITests" class="method navigator-link" hash-for-method="testUpdateBookWithInvalidIdAsAdmin">testUpdateBookWithInvalidIdAsAdmin</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-LibraryAPITests" title="TestCases.PutBookAPITests" class="method navigator-link" hash-for-method="testUpdateBookWithMissingTitleAndAuthor">testUpdateBookWithMissingTitleAndAuthor</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content passed suite-LibraryAPITests -->
+                  </li>
+                </ul>
+              </div> <!-- suite-section-content -->
+            </div> <!-- result-section -->
+          </div> <!-- navigator-suite-content -->
+        </div> <!-- rounded-window -->
+      </div> <!-- suite -->
+    </div> <!-- navigator-root -->
+    <div class="wrapper">
+      <div class="main-panel-root">
+        <div panel-name="suite-LibraryAPITests" class="panel LibraryAPITests">
+          <div class="suite-LibraryAPITests-class-failed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="failed.png"/>
+              <span class="class-name">TestCases.GetBookAPITests</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="testGetBookByIdAsAdmin">
+                  </a> <!-- testGetBookByIdAsAdmin -->
+                  <span class="method-name">testGetBookByIdAsAdmin</span>
+                  <div class="stack-trace">java.lang.AssertionError: Expected status code is 200 expected [200] but found [404]
+	at TestCases.GetBookAPITests.testGetBookByIdAsAdmin(GetBookAPITests.java:73)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 36 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testGetBookByIdAsRegularUser">
+                  </a> <!-- testGetBookByIdAsRegularUser -->
+                  <span class="method-name">testGetBookByIdAsRegularUser</span>
+                  <div class="stack-trace">java.lang.AssertionError: Expected status code is 200 expected [200] but found [403]
+	at TestCases.GetBookAPITests.testGetBookByIdAsRegularUser(GetBookAPITests.java:133)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 36 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testGetBookByIdAsUser">
+                  </a> <!-- testGetBookByIdAsUser -->
+                  <span class="method-name">testGetBookByIdAsUser</span>
+                  <div class="stack-trace">java.lang.AssertionError: Expected status code is 200 expected [200] but found [403]
+	at TestCases.GetBookAPITests.testGetBookByIdAsUser(GetBookAPITests.java:58)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 36 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testGetBookByValidIdAsAdmin">
+                  </a> <!-- testGetBookByValidIdAsAdmin -->
+                  <span class="method-name">testGetBookByValidIdAsAdmin</span>
+                  <div class="stack-trace">java.lang.AssertionError: Expected status code is 200 expected [400] but found [404]
+	at TestCases.GetBookAPITests.testGetBookByValidIdAsAdmin(GetBookAPITests.java:91)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 36 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-LibraryAPITests-class-failed -->
+          <div class="suite-LibraryAPITests-class-failed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="failed.png"/>
+              <span class="class-name">TestCases.PutBookAPITests</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="testUpdateBookWithAnotherBooksTitleAsAdmin">
+                  </a> <!-- testUpdateBookWithAnotherBooksTitleAsAdmin -->
+                  <span class="method-name">testUpdateBookWithAnotherBooksTitleAsAdmin</span>
+                  <div class="stack-trace">java.lang.AssertionError: Expected status code is 400 for using another book&apos;s title expected [400] but found [404]
+	at TestCases.PutBookAPITests.testUpdateBookWithAnotherBooksTitleAsAdmin(PutBookAPITests.java:219)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 36 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testUpdateBookWithEmptyAuthor">
+                  </a> <!-- testUpdateBookWithEmptyAuthor -->
+                  <span class="method-name">testUpdateBookWithEmptyAuthor</span>
+                  <div class="stack-trace">java.lang.AssertionError: Expected status code is 400 for empty author expected [400] but found [200]
+	at TestCases.PutBookAPITests.testUpdateBookWithEmptyAuthor(PutBookAPITests.java:116)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 36 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testUpdateBookWithMissingOrInvalidTitleAsAdmin">
+                  </a> <!-- testUpdateBookWithMissingOrInvalidTitleAsAdmin -->
+                  <span class="method-name">testUpdateBookWithMissingOrInvalidTitleAsAdmin</span>
+                  <div class="stack-trace">java.lang.AssertionError: Expected status code is 400 for missing/empty title expected [400] but found [200]
+	at TestCases.PutBookAPITests.testUpdateBookWithMissingOrInvalidTitleAsAdmin(PutBookAPITests.java:184)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 36 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testUpdateBookWithNoneParametersAsAdmin">
+                  </a> <!-- testUpdateBookWithNoneParametersAsAdmin -->
+                  <span class="method-name">testUpdateBookWithNoneParametersAsAdmin</span>
+                  <div class="stack-trace">java.lang.AssertionError: Response should indicate invalid input parameters expected [true] but found [false]
+	at TestCases.PutBookAPITests.testUpdateBookWithNoneParametersAsAdmin(PutBookAPITests.java:242)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 34 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testUpdateBookWithValidDataAsAdmin">
+                  </a> <!-- testUpdateBookWithValidDataAsAdmin -->
+                  <span class="method-name">testUpdateBookWithValidDataAsAdmin</span>
+                  <div class="stack-trace">java.lang.AssertionError: Expected status code is 200 expected [200] but found [404]
+	at TestCases.PutBookAPITests.testUpdateBookWithValidDataAsAdmin(PutBookAPITests.java:45)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 36 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testUpdateBookWithValidDataAsUser">
+                  </a> <!-- testUpdateBookWithValidDataAsUser -->
+                  <span class="method-name">testUpdateBookWithValidDataAsUser</span>
+                  <div class="stack-trace">java.lang.AssertionError: Response should indicate forbidden access expected [true] but found [false]
+	at TestCases.PutBookAPITests.testUpdateBookWithValidDataAsUser(PutBookAPITests.java:70)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 34 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-LibraryAPITests-class-failed -->
+          <div class="suite-LibraryAPITests-class-failed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="failed.png"/>
+              <span class="class-name">UITestCases.BuggyCarsUITests</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="testCommentCharacterLimit">
+                  </a> <!-- testCommentCharacterLimit -->
+                  <span class="method-name">testCommentCharacterLimit</span>
+                  <div class="stack-trace">java.lang.AssertionError: expected [true] but found [false]
+	at UITestCases.BuggyCarsUITests.testLoginWithValidCredentials(BuggyCarsUITests.java:44)
+	at UITestCases.BuggyCarsUITests.testCommentCharacterLimit(BuggyCarsUITests.java:117)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 35 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testDuplicateRegistration">
+                  </a> <!-- testDuplicateRegistration -->
+                  <span class="method-name">testDuplicateRegistration</span>
+                  <div class="stack-trace">java.lang.AssertionError: expected [true] but found [false]
+	at UITestCases.BuggyCarsUITests.testDuplicateRegistration(BuggyCarsUITests.java:84)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 35 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testLoginWithValidCredentials">
+                  </a> <!-- testLoginWithValidCredentials -->
+                  <span class="method-name">testLoginWithValidCredentials</span>
+                  <div class="stack-trace">java.lang.AssertionError: expected [true] but found [false]
+	at UITestCases.BuggyCarsUITests.testLoginWithValidCredentials(BuggyCarsUITests.java:44)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 35 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testMissingFieldsInRegistration">
+                  </a> <!-- testMissingFieldsInRegistration -->
+                  <span class="method-name">testMissingFieldsInRegistration</span>
+                  <div class="stack-trace">java.lang.AssertionError: expected [true] but found [false]
+	at UITestCases.BuggyCarsUITests.testMissingFieldsInRegistration(BuggyCarsUITests.java:62)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 35 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testProfilePageAccessibility">
+                  </a> <!-- testProfilePageAccessibility -->
+                  <span class="method-name">testProfilePageAccessibility</span>
+                  <div class="stack-trace">java.lang.AssertionError: expected [true] but found [false]
+	at UITestCases.BuggyCarsUITests.testLoginWithValidCredentials(BuggyCarsUITests.java:44)
+	at UITestCases.BuggyCarsUITests.testProfilePageAccessibility(BuggyCarsUITests.java:101)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 35 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testUserRegistration">
+                  </a> <!-- testUserRegistration -->
+                  <span class="method-name">testUserRegistration</span>
+                  <div class="stack-trace">java.lang.AssertionError: expected [true] but found [false]
+	at UITestCases.BuggyCarsUITests.testUserRegistration(BuggyCarsUITests.java:33)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 35 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testWeakPasswordRegistration">
+                  </a> <!-- testWeakPasswordRegistration -->
+                  <span class="method-name">testWeakPasswordRegistration</span>
+                  <div class="stack-trace">java.lang.AssertionError: expected [true] but found [false]
+	at UITestCases.BuggyCarsUITests.testWeakPasswordRegistration(BuggyCarsUITests.java:96)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 35 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-LibraryAPITests-class-failed -->
+          <div class="suite-LibraryAPITests-class-failed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="failed.png"/>
+              <span class="class-name">TestCases.DeleteBookAPITests</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="testDeleteBookAsUser">
+                  </a> <!-- testDeleteBookAsUser -->
+                  <span class="method-name">testDeleteBookAsUser</span>
+                  <div class="stack-trace">java.lang.AssertionError: Expected status code is 403 for forbidden access expected [403] but found [404]
+	at TestCases.DeleteBookAPITests.testDeleteBookAsUser(DeleteBookAPITests.java:77)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 36 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testDeleteBookWithInvalidIdAsAdmin">
+                  </a> <!-- testDeleteBookWithInvalidIdAsAdmin -->
+                  <span class="method-name">testDeleteBookWithInvalidIdAsAdmin</span>
+                  <div class="stack-trace">java.lang.AssertionError: Expected status code is 404 for non-existent book deletion expected [404] but found [403]
+	at TestCases.DeleteBookAPITests.testDeleteBookWithInvalidIdAsAdmin(DeleteBookAPITests.java:57)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 36 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testDeleteBookWithValidIdAsAdmin">
+                  </a> <!-- testDeleteBookWithValidIdAsAdmin -->
+                  <span class="method-name">testDeleteBookWithValidIdAsAdmin</span>
+                  <div class="stack-trace">java.lang.AssertionError: Expected status code is 200 for valid book deletion expected [200] but found [403]
+	at TestCases.DeleteBookAPITests.testDeleteBookWithValidIdAsAdmin(DeleteBookAPITests.java:37)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 36 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-LibraryAPITests-class-failed -->
+          <div class="suite-LibraryAPITests-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">TestCases.GetBookAPITests</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="testGetAllBooksAsAdmin">
+                  </a> <!-- testGetAllBooksAsAdmin -->
+                  <span class="method-name">testGetAllBooksAsAdmin</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testGetAllBooksAsUser">
+                  </a> <!-- testGetAllBooksAsUser -->
+                  <span class="method-name">testGetAllBooksAsUser</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testGetBookByInvalidIdAsAdmin">
+                  </a> <!-- testGetBookByInvalidIdAsAdmin -->
+                  <span class="method-name">testGetBookByInvalidIdAsAdmin</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-LibraryAPITests-class-passed -->
+          <div class="suite-LibraryAPITests-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">TestCases.PutBookAPITests</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="testUpdateBookWithAnotherBooksId">
+                  </a> <!-- testUpdateBookWithAnotherBooksId -->
+                  <span class="method-name">testUpdateBookWithAnotherBooksId</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testUpdateBookWithInvalidIdAsAdmin">
+                  </a> <!-- testUpdateBookWithInvalidIdAsAdmin -->
+                  <span class="method-name">testUpdateBookWithInvalidIdAsAdmin</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testUpdateBookWithMissingTitleAndAuthor">
+                  </a> <!-- testUpdateBookWithMissingTitleAndAuthor -->
+                  <span class="method-name">testUpdateBookWithMissingTitleAndAuthor</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-LibraryAPITests-class-passed -->
+          <div class="suite-LibraryAPITests-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">UITestCases.BuggyCarsUITests</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="testAccessibilityOfLinks">
+                  </a> <!-- testAccessibilityOfLinks -->
+                  <span class="method-name">testAccessibilityOfLinks</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testBrokenLinksOnHomepage">
+                  </a> <!-- testBrokenLinksOnHomepage -->
+                  <span class="method-name">testBrokenLinksOnHomepage</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testResponsiveUI">
+                  </a> <!-- testResponsiveUI -->
+                  <span class="method-name">testResponsiveUI</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-LibraryAPITests-class-passed -->
+        </div> <!-- panel LibraryAPITests -->
+        <div panel-name="test-xml-LibraryAPITests" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">H:\Group_01_GitRepository\src\test\resources\testng.xml</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <pre>
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;!DOCTYPE suite SYSTEM &quot;https://testng.org/testng-1.0.dtd&quot;&gt;
+&lt;suite name=&quot;LibraryAPITests&quot; verbose=&quot;0&quot;&gt;
+  &lt;listeners&gt;
+    &lt;listener class-name=&quot;io.qameta.allure.testng.AllureTestNg&quot;/&gt;
+  &lt;/listeners&gt;
+  &lt;test thread-count=&quot;5&quot; name=&quot;APITestSuite&quot; verbose=&quot;0&quot;&gt;
+    &lt;classes&gt;
+      &lt;class name=&quot;TestCases.GetBookAPITests&quot;/&gt;
+      &lt;class name=&quot;TestCases.PostBookAPITests&quot;/&gt;
+      &lt;class name=&quot;TestCases.PutBookAPITests&quot;/&gt;
+      &lt;class name=&quot;TestCases.DeleteBookAPITests&quot;/&gt;
+    &lt;/classes&gt;
+  &lt;/test&gt; &lt;!-- APITestSuite --&gt;
+  &lt;test thread-count=&quot;5&quot; name=&quot;UI Tests&quot; verbose=&quot;0&quot;&gt;
+    &lt;classes&gt;
+      &lt;class name=&quot;UITestCases.BuggyCarsUITests&quot;/&gt;
+    &lt;/classes&gt;
+  &lt;/test&gt; &lt;!-- UI Tests --&gt;
+&lt;/suite&gt; &lt;!-- LibraryAPITests --&gt;
+            </pre>
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="testlist-LibraryAPITests" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Tests for LibraryAPITests</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <ul>
+              <li>
+                <span class="test-name">APITestSuite (4 classes)</span>
+              </li>
+              <li>
+                <span class="test-name">UI Tests (1 class)</span>
+              </li>
+            </ul>
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="group-LibraryAPITests" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Groups for LibraryAPITests</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="times-LibraryAPITests" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Times for LibraryAPITests</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="times-div">
+              <script type="text/javascript">
+suiteTableInitFunctions.push('tableData_LibraryAPITests');
+function tableData_LibraryAPITests() {
+var data = new google.visualization.DataTable();
+data.addColumn('number', 'Number');
+data.addColumn('string', 'Method');
+data.addColumn('string', 'Class');
+data.addColumn('number', 'Time (ms)');
+data.addRows(29);
+data.setCell(0, 0, 0)
+data.setCell(0, 1, 'testGetAllBooksAsAdmin')
+data.setCell(0, 2, 'TestCases.GetBookAPITests')
+data.setCell(0, 3, 1479);
+data.setCell(1, 0, 1)
+data.setCell(1, 1, 'testResponsiveUI')
+data.setCell(1, 2, 'UITestCases.BuggyCarsUITests')
+data.setCell(1, 3, 809);
+data.setCell(2, 0, 2)
+data.setCell(2, 1, 'testUpdateBookWithAnotherBooksId')
+data.setCell(2, 2, 'TestCases.PutBookAPITests')
+data.setCell(2, 3, 759);
+data.setCell(3, 0, 3)
+data.setCell(3, 1, 'testGetBookByIdAsRegularUser')
+data.setCell(3, 2, 'TestCases.GetBookAPITests')
+data.setCell(3, 3, 712);
+data.setCell(4, 0, 4)
+data.setCell(4, 1, 'testUpdateBookWithNoneParametersAsAdmin')
+data.setCell(4, 2, 'TestCases.PutBookAPITests')
+data.setCell(4, 3, 694);
+data.setCell(5, 0, 5)
+data.setCell(5, 1, 'testGetBookByValidIdAsAdmin')
+data.setCell(5, 2, 'TestCases.GetBookAPITests')
+data.setCell(5, 3, 652);
+data.setCell(6, 0, 6)
+data.setCell(6, 1, 'testGetBookByIdAsAdmin')
+data.setCell(6, 2, 'TestCases.GetBookAPITests')
+data.setCell(6, 3, 651);
+data.setCell(7, 0, 7)
+data.setCell(7, 1, 'testGetAllBooksAsUser')
+data.setCell(7, 2, 'TestCases.GetBookAPITests')
+data.setCell(7, 3, 639);
+data.setCell(8, 0, 8)
+data.setCell(8, 1, 'testGetBookByInvalidIdAsAdmin')
+data.setCell(8, 2, 'TestCases.GetBookAPITests')
+data.setCell(8, 3, 634);
+data.setCell(9, 0, 9)
+data.setCell(9, 1, 'testUpdateBookWithInvalidIdAsAdmin')
+data.setCell(9, 2, 'TestCases.PutBookAPITests')
+data.setCell(9, 3, 632);
+data.setCell(10, 0, 10)
+data.setCell(10, 1, 'testUserRegistration')
+data.setCell(10, 2, 'UITestCases.BuggyCarsUITests')
+data.setCell(10, 3, 625);
+data.setCell(11, 0, 11)
+data.setCell(11, 1, 'testUpdateBookWithValidDataAsAdmin')
+data.setCell(11, 2, 'TestCases.PutBookAPITests')
+data.setCell(11, 3, 610);
+data.setCell(12, 0, 12)
+data.setCell(12, 1, 'testDuplicateRegistration')
+data.setCell(12, 2, 'UITestCases.BuggyCarsUITests')
+data.setCell(12, 3, 606);
+data.setCell(13, 0, 13)
+data.setCell(13, 1, 'testUpdateBookWithMissingTitleAndAuthor')
+data.setCell(13, 2, 'TestCases.PutBookAPITests')
+data.setCell(13, 3, 600);
+data.setCell(14, 0, 14)
+data.setCell(14, 1, 'testUpdateBookWithEmptyAuthor')
+data.setCell(14, 2, 'TestCases.PutBookAPITests')
+data.setCell(14, 3, 592);
+data.setCell(15, 0, 15)
+data.setCell(15, 1, 'testDeleteBookWithInvalidIdAsAdmin')
+data.setCell(15, 2, 'TestCases.DeleteBookAPITests')
+data.setCell(15, 3, 590);
+data.setCell(16, 0, 16)
+data.setCell(16, 1, 'testDeleteBookWithValidIdAsAdmin')
+data.setCell(16, 2, 'TestCases.DeleteBookAPITests')
+data.setCell(16, 3, 588);
+data.setCell(17, 0, 17)
+data.setCell(17, 1, 'testUpdateBookWithValidDataAsUser')
+data.setCell(17, 2, 'TestCases.PutBookAPITests')
+data.setCell(17, 3, 585);
+data.setCell(18, 0, 18)
+data.setCell(18, 1, 'testGetBookByIdAsUser')
+data.setCell(18, 2, 'TestCases.GetBookAPITests')
+data.setCell(18, 3, 577);
+data.setCell(19, 0, 19)
+data.setCell(19, 1, 'testUpdateBookWithMissingOrInvalidTitleAsAdmin')
+data.setCell(19, 2, 'TestCases.PutBookAPITests')
+data.setCell(19, 3, 575);
+data.setCell(20, 0, 20)
+data.setCell(20, 1, 'testUpdateBookWithAnotherBooksTitleAsAdmin')
+data.setCell(20, 2, 'TestCases.PutBookAPITests')
+data.setCell(20, 3, 574);
+data.setCell(21, 0, 21)
+data.setCell(21, 1, 'testDeleteBookAsUser')
+data.setCell(21, 2, 'TestCases.DeleteBookAPITests')
+data.setCell(21, 3, 566);
+data.setCell(22, 0, 22)
+data.setCell(22, 1, 'testWeakPasswordRegistration')
+data.setCell(22, 2, 'UITestCases.BuggyCarsUITests')
+data.setCell(22, 3, 563);
+data.setCell(23, 0, 23)
+data.setCell(23, 1, 'testCommentCharacterLimit')
+data.setCell(23, 2, 'UITestCases.BuggyCarsUITests')
+data.setCell(23, 3, 292);
+data.setCell(24, 0, 24)
+data.setCell(24, 1, 'testLoginWithValidCredentials')
+data.setCell(24, 2, 'UITestCases.BuggyCarsUITests')
+data.setCell(24, 3, 262);
+data.setCell(25, 0, 25)
+data.setCell(25, 1, 'testProfilePageAccessibility')
+data.setCell(25, 2, 'UITestCases.BuggyCarsUITests')
+data.setCell(25, 3, 254);
+data.setCell(26, 0, 26)
+data.setCell(26, 1, 'testMissingFieldsInRegistration')
+data.setCell(26, 2, 'UITestCases.BuggyCarsUITests')
+data.setCell(26, 3, 205);
+data.setCell(27, 0, 27)
+data.setCell(27, 1, 'testAccessibilityOfLinks')
+data.setCell(27, 2, 'UITestCases.BuggyCarsUITests')
+data.setCell(27, 3, 118);
+data.setCell(28, 0, 28)
+data.setCell(28, 1, 'testBrokenLinksOnHomepage')
+data.setCell(28, 2, 'UITestCases.BuggyCarsUITests')
+data.setCell(28, 3, 104);
+window.suiteTableData['LibraryAPITests']= { tableData: data, tableDiv: 'times-div-LibraryAPITests'}
+return data;
+}
+              </script>
+              <span class="suite-total-time">Total running time: 16 seconds</span>
+              <div id="times-div-LibraryAPITests">
+              </div> <!-- times-div-LibraryAPITests -->
+            </div> <!-- times-div -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="reporter-LibraryAPITests" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Reporter output for LibraryAPITests</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="ignored-methods-LibraryAPITests" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">0 ignored methods</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="chronological-LibraryAPITests" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Methods in chronological order</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="chronological-class">
+              <div class="chronological-class-name">TestCases.GetBookAPITests</div> <!-- chronological-class-name -->
+              <div class="configuration-class before">
+                <span class="method-name">setup</span>
+                <span class="method-start">0 ms</span>
+              </div> <!-- configuration-class before -->
+              <div class="test-method">
+                <span class="method-name">testGetAllBooksAsAdmin</span>
+                <span class="method-start">323 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">testGetAllBooksAsUser</span>
+                <span class="method-start">1854 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">testGetBookByIdAsAdmin</span>
+                <span class="method-start">2496 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">testGetBookByIdAsRegularUser</span>
+                <span class="method-start">3155 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">testGetBookByIdAsUser</span>
+                <span class="method-start">3869 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">testGetBookByInvalidIdAsAdmin</span>
+                <span class="method-start">4449 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">testGetBookByValidIdAsAdmin</span>
+                <span class="method-start">5087 ms</span>
+              </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">TestCases.PutBookAPITests</div> <!-- chronological-class-name -->
+              <div class="configuration-class before">
+                <span class="method-name">setup</span>
+                <span class="method-start">5741 ms</span>
+              </div> <!-- configuration-class before -->
+              <div class="test-method">
+                <span class="method-name">testUpdateBookWithAnotherBooksId</span>
+                <span class="method-start">5742 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">testUpdateBookWithAnotherBooksTitleAsAdmin</span>
+                <span class="method-start">6502 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">testUpdateBookWithEmptyAuthor</span>
+                <span class="method-start">7078 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">testUpdateBookWithInvalidIdAsAdmin</span>
+                <span class="method-start">7673 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">testUpdateBookWithMissingOrInvalidTitleAsAdmin</span>
+                <span class="method-start">8308 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">testUpdateBookWithMissingTitleAndAuthor</span>
+                <span class="method-start">8885 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">testUpdateBookWithNoneParametersAsAdmin</span>
+                <span class="method-start">9489 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">testUpdateBookWithValidDataAsAdmin</span>
+                <span class="method-start">10190 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">testUpdateBookWithValidDataAsUser</span>
+                <span class="method-start">10801 ms</span>
+              </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">TestCases.DeleteBookAPITests</div> <!-- chronological-class-name -->
+              <div class="configuration-class before">
+                <span class="method-name">setup</span>
+                <span class="method-start">11389 ms</span>
+              </div> <!-- configuration-class before -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">testDeleteBookAsUser</span>
+                <span class="method-start">11390 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">testDeleteBookWithInvalidIdAsAdmin</span>
+                <span class="method-start">11962 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">testDeleteBookWithValidIdAsAdmin</span>
+                <span class="method-start">12557 ms</span>
+              </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">UITestCases.BuggyCarsUITests</div> <!-- chronological-class-name -->
+              <div class="configuration-method before">
+                <span class="method-name">setup</span>
+                <span class="method-start">13187 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">testAccessibilityOfLinks</span>
+                <span class="method-start">16456 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">teardown</span>
+                <span class="method-start">16575 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">setup</span>
+                <span class="method-start">16805 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">testBrokenLinksOnHomepage</span>
+                <span class="method-start">18532 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">teardown</span>
+                <span class="method-start">18637 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">setup</span>
+                <span class="method-start">18850 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">testCommentCharacterLimit</span>
+                <span class="method-start">20475 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">teardown</span>
+                <span class="method-start">20769 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">setup</span>
+                <span class="method-start">20964 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">testDuplicateRegistration</span>
+                <span class="method-start">22616 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">teardown</span>
+                <span class="method-start">23225 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">setup</span>
+                <span class="method-start">23431 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">testLoginWithValidCredentials</span>
+                <span class="method-start">25067 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">teardown</span>
+                <span class="method-start">25330 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">setup</span>
+                <span class="method-start">25522 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">testMissingFieldsInRegistration</span>
+                <span class="method-start">27163 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">teardown</span>
+                <span class="method-start">27370 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">setup</span>
+                <span class="method-start">27565 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">testProfilePageAccessibility</span>
+                <span class="method-start">29399 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">teardown</span>
+                <span class="method-start">29655 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">setup</span>
+                <span class="method-start">29857 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">testResponsiveUI</span>
+                <span class="method-start">31609 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">teardown</span>
+                <span class="method-start">32421 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">setup</span>
+                <span class="method-start">32609 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">testUserRegistration</span>
+                <span class="method-start">34362 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">teardown</span>
+                <span class="method-start">34988 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">setup</span>
+                <span class="method-start">35184 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">testWeakPasswordRegistration</span>
+                <span class="method-start">36976 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">teardown</span>
+                <span class="method-start">37541 ms</span>
+              </div> <!-- configuration-method after -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+      </div> <!-- main-panel-root -->
+    </div> <!-- wrapper -->
+  </body>
+<script type="text/javascript" src="testng-reports2.js"></script>
+</html>
