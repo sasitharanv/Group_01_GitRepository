@@ -115,10 +115,18 @@ public class BuggyCarsUITests extends BaseTest {
 
     @Test
     public void testBrokenLinksOnHomepage() {
+        // Fetch all anchor tags from the homepage
         List<WebElement> links = driver.findElements(By.tagName("a"));
+
+        // Iterate through each link and verify it is not broken
         for (WebElement link : links) {
             String href = link.getAttribute("href");
-            Assert.assertNotNull(href, "Link is broken: " + link.getText());
+
+            // Assert that the href attribute is not null
+            Assert.assertNotNull(href, "Broken link found: " + (link.getText().isEmpty() ? "Unnamed link" : link.getText()));
+
+            // Optionally, you can log each link for debugging
+            System.out.println("Verified link: " + href);
         }
     }
 
@@ -126,7 +134,9 @@ public class BuggyCarsUITests extends BaseTest {
     public void testCommentCharacterLimit() {
         testLoginWithValidCredentials();
         driver.findElement(By.linkText("Overall Rating")).click();
+        System.out.println("ryun");
         driver.findElement(By.linkText("Buggy Car Model")).click();
+        System.out.println("ryun");
         driver.findElement(By.id("comment")).sendKeys("a".repeat(1001)); // Exceeding limit
         driver.findElement(By.cssSelector("button[type='submit']")).click();
         Assert.assertTrue(driver.getPageSource().contains("Comment exceeds maximum length"));
