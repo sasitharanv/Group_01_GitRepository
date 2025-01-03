@@ -144,14 +144,19 @@ public class BuggyCarsUITests extends BaseTest {
         Assert.assertEquals(errorMessage.getText(), "InvalidPasswordException: Password did not conform with policy: Password not long enough");
     }
 
-
+    // UITC8
     @Test
     public void testProfilePageAccessibility() {
         testLoginWithValidCredentials();
-        driver.findElement(By.linkText("Profile")).click();
-        Assert.assertTrue(driver.getPageSource().contains("Your Profile"));
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        WebElement profileLink = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/my-app/header/nav/div/my-login/div/ul/li[1]/span")));
+        profileLink.click();
+        WebElement greetingText = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[contains(text(), 'Hi, Varatharasa')]")));
+        Assert.assertTrue(greetingText.isDisplayed(), "Greeting text 'Hi, Varatharasa' is not displayed!");
+        Assert.assertEquals(greetingText.getText(), "Hi, Varatharasa", "Greeting text does not match the expected value!");
     }
 
+    // UITC9
     @Test
     public void testBrokenLinksOnHomepage() {
         // Fetch all anchor tags from the homepage
@@ -169,6 +174,7 @@ public class BuggyCarsUITests extends BaseTest {
         }
     }
 
+    // UITC10
     @Test
     public void testCommentCharacterLimit() {
         testLoginWithValidCredentials();
@@ -181,6 +187,7 @@ public class BuggyCarsUITests extends BaseTest {
         Assert.assertTrue(driver.getPageSource().contains("Comment exceeds maximum length"));
     }
 
+    // UIT11
     @Test
     public void testLogoutFunctionality() {
         // Instantiate the HomePage
@@ -194,9 +201,7 @@ public class BuggyCarsUITests extends BaseTest {
 
         // Wait for the Login button to become visible after logging out
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        WebElement loginButton = wait.until(ExpectedConditions.visibilityOfElementLocated(
-                By.xpath("/html/body/my-app/header/nav/div/my-login/div/form/button")
-        ));
+        WebElement loginButton = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html/body/my-app/header/nav/div/my-login/div/form/button")));
 
         // Assert that the Login button is visible
         Assert.assertTrue(loginButton.isDisplayed(), "The Login button is not visible after logging out!");
@@ -205,12 +210,14 @@ public class BuggyCarsUITests extends BaseTest {
         Assert.assertEquals(loginButton.getText().trim(), "Login", "The button text is not as expected after logging out!");
     }
 
+    // UITC12
     //  Verify Page Title
     @Test
     public void testPageTitle() {
         Assert.assertEquals(driver.getTitle(), "Buggy Cars Rating", "Page title is incorrect!");
     }
 
+    // UITC13
     @Test
     public void testChangePasswordSuccessfully() {
         // Step 1: Log in with valid credentials
@@ -250,6 +257,7 @@ public class BuggyCarsUITests extends BaseTest {
         log("Test completed successfully. Password changed and success message verified.");
     }
 
+    // UITC14
     @Test
     public void testChangePasswordWithInvalidCurrentPassword() {
         // Step 1: Log in with valid credentials
