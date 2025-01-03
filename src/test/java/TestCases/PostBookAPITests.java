@@ -50,7 +50,7 @@ public class PostBookAPITests {
         Map<String, String> admin = UserFactory.getUser("admin");
 
         // Request body with valid data
-        String requestBody = "{ \"title\": \"Valid Books\", \"author\": \"Valid Authors\" }";
+        String requestBody = "{ \"title\": \"Vald Books\", \"author\": \"Valid Autors\" }";
 
         // Make a POST request to create a book
         Response response = RestAssured.given()
@@ -71,7 +71,7 @@ public class PostBookAPITests {
         Map<String, String> admin = UserFactory.getUser("admin");
 
         // Request body with missing title
-        String requestBody = "{ \"id\": 1, \"author\": \"Author Names\" }";
+        String requestBody = "{ \"id\": 123, \"author\": \"Attffutfythor Naes\" }";
 
         // Make a POST request to create a book
         Response response = RestAssured.given()

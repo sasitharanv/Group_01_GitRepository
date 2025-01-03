@@ -42,7 +42,7 @@ public class BuggyCarsUITests extends BaseTest {
         LoginPage loginPage = new LoginPage(driver);
 
         loginPage.enterLogin("kirusanthanr");
-        loginPage.enterPassword("Malathi75@");
+        loginPage.enterPassword("Malathi75#");
         loginPage.clickSubmit();
 
         By welcomeMessageLocator = By.xpath("/html/body/my-app/header/nav/div/my-login/div/ul/li[1]/span");
@@ -185,6 +185,45 @@ public class BuggyCarsUITests extends BaseTest {
 
         // Step 7: Log the result
         log("Test completed successfully. Password changed and success message verified.");
+    }
+
+    @Test
+    public void testChangePasswordWithInvalidCurrentPassword() {
+        // Step 1: Log in with valid credentials
+        log("Logging in with valid credentials...");
+        testLoginWithValidCredentials();
+
+        // Step 2: Navigate to the profile page
+        log("Navigating to the profile page...");
+        ProfilePage profilePage = new ProfilePage(driver);
+        profilePage.clickProfile();
+
+        // Step 3: Fill the change password form with invalid current password
+        log("Filling the change password form with invalid current password...");
+        profilePage.fillChangePasswordForm("faultrest", "Malathi75#", "Malathi75#");
+
+        // Step 4: Wait for the failure message to appear
+        log("Waiting for the failure message to appear...");
+
+        // Use a reliable XPath for the failure message
+        By failureMessageLocator = By.xpath("//div[contains(@class, 'alert-danger') and contains(text(), 'Incorrect')]");
+
+        // Wait for the failure message to be visible (not just present in the DOM)
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(50)); // Wait up to 20 seconds
+        WebElement failureMessage = wait.until(ExpectedConditions.visibilityOfElementLocated(failureMessageLocator));
+
+        // Step 5: Get the text of the failure message
+        log("Retrieving the failure message text...");
+        String failureMessageText = failureMessage.getText();
+        log("Failure message text: " + failureMessageText);
+
+        // Step 6: Assert that the failure message is displayed and contains the expected text
+        log("Asserting the failure message...");
+        String expectedMessage = "NotAuthorizedException: Incorrect username or password"; // Replace with the expected message
+        Assert.assertTrue(failureMessageText.contains(expectedMessage), "Failure message does not match the expected text.");
+
+        // Step 7: Log the result
+        log("Test completed successfully. Importance of current password double-checked.");
     }
     private void log(String message) {
         System.out.println("[LOG] " + message);
