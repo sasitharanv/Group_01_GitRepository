@@ -1,0 +1,52 @@
+name: RestAssured, TestNG, Selenium Tests with Allure Report
+
+on:
+  push:
+    branches:
+      - main  # Replace with your desired branch name
+
+jobs:
+  test-and-report:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Checkout the code
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # Step 2: Set up Java
+      - name: Set up Java
+        uses: actions/setup-java@v3
+        with:
+          java-version: 11
+          distribution: temurin
+
+      # Step 3: Cache Maven dependencies
+      - name: Cache Maven dependencies
+        uses: actions/cache@v3
+        with:
+          path: ~/.m2
+          key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
+          restore-keys: |
+            ${{ runner.os }}-m2
+
+      # Step 4: Run Maven tests with TestNG, Selenium, and Rest Assured
+      - name: Run tests
+        run: |
+          mvn clean test -Dsurefire.suiteXmlFiles=src/test/resources/testng.xml
+
+      # Step 5: Generate Allure Report
+      - name: Generate Allure Report
+        if: always() # Ensure this runs even if tests fail
+        run: |
+          mvn allure:report
+
+      # Step 6: Publish Allure Report to GitHub Pages
+      - name: Deploy Allure Report to GitHub Pages
+        if: always() # Ensure this runs even if tests fail
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./target/site/allure-maven-plugin
+          publish_branch: gh-pages
+          force_orphan: true

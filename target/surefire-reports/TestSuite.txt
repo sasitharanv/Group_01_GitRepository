@@ -1,48 +1,7 @@
 -------------------------------------------------------------------------------
 Test set: TestSuite
 -------------------------------------------------------------------------------
-Tests run: 29, Failures: 20, Errors: 0, Skipped: 0, Time elapsed: 38.486 s <<< FAILURE! - in TestSuite
-TestCases.GetBookAPITests.testGetBookByIdAsAdmin  Time elapsed: 0.657 s  <<< FAILURE!
-java.lang.AssertionError: Expected status code is 200 expected [200] but found [404]
-	at org.testng.Assert.fail(Assert.java:110)
-	at org.testng.Assert.failNotEquals(Assert.java:1413)
-	at org.testng.Assert.assertEqualsImpl(Assert.java:149)
-	at org.testng.Assert.assertEquals(Assert.java:131)
-	at org.testng.Assert.assertEquals(Assert.java:1240)
-	at TestCases.GetBookAPITests.testGetBookByIdAsAdmin(GetBookAPITests.java:73)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
-	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
-	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:969)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
-	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
-	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at org.testng.TestRunner.privateRun(TestRunner.java:829)
-	at org.testng.TestRunner.run(TestRunner.java:602)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:437)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:431)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:391)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:330)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1256)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1176)
-	at org.testng.TestNG.runSuites(TestNG.java:1099)
-	at org.testng.TestNG.run(TestNG.java:1067)
-	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:324)
-	at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:74)
-	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:123)
-	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:456)
-	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:169)
-	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:595)
-	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:581)
-
+Tests run: 33, Failures: 21, Errors: 0, Skipped: 0, Time elapsed: 57.183 s <<< FAILURE! - in TestSuite
 TestCases.GetBookAPITests.testGetBookByIdAsRegularUser  Time elapsed: 0.713 s  <<< FAILURE!
 java.lang.AssertionError: Expected status code is 200 expected [200] but found [403]
 	at org.testng.Assert.fail(Assert.java:110)
@@ -50,7 +9,7 @@ java.lang.AssertionError: Expected status code is 200 expected [200] but found [
 	at org.testng.Assert.assertEqualsImpl(Assert.java:149)
 	at org.testng.Assert.assertEquals(Assert.java:131)
 	at org.testng.Assert.assertEquals(Assert.java:1240)
-	at TestCases.GetBookAPITests.testGetBookByIdAsRegularUser(GetBookAPITests.java:133)
+	at TestCases.GetBookAPITests.testGetBookByIdAsRegularUser(GetBookAPITests.java:114)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -84,7 +43,7 @@ java.lang.AssertionError: Expected status code is 200 expected [200] but found [
 	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:595)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:581)
 
-TestCases.GetBookAPITests.testGetBookByIdAsUser  Time elapsed: 0.579 s  <<< FAILURE!
+TestCases.GetBookAPITests.testGetBookByIdAsUser  Time elapsed: 0.686 s  <<< FAILURE!
 java.lang.AssertionError: Expected status code is 200 expected [200] but found [403]
 	at org.testng.Assert.fail(Assert.java:110)
 	at org.testng.Assert.failNotEquals(Assert.java:1413)
@@ -125,14 +84,14 @@ java.lang.AssertionError: Expected status code is 200 expected [200] but found [
 	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:595)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:581)
 
-TestCases.GetBookAPITests.testGetBookByValidIdAsAdmin  Time elapsed: 0.653 s  <<< FAILURE!
-java.lang.AssertionError: Expected status code is 200 expected [400] but found [404]
+TestCases.PostBookAPITests.testCreateBookWithMissingAuthor  Time elapsed: 0.631 s  <<< FAILURE!
+java.lang.AssertionError: Expected status code is 400 expected [400] but found [208]
 	at org.testng.Assert.fail(Assert.java:110)
 	at org.testng.Assert.failNotEquals(Assert.java:1413)
 	at org.testng.Assert.assertEqualsImpl(Assert.java:149)
 	at org.testng.Assert.assertEquals(Assert.java:131)
 	at org.testng.Assert.assertEquals(Assert.java:1240)
-	at TestCases.GetBookAPITests.testGetBookByValidIdAsAdmin(GetBookAPITests.java:91)
+	at TestCases.PostBookAPITests.testCreateBookWithMissingAuthor(PostBookAPITests.java:58)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -166,7 +125,48 @@ java.lang.AssertionError: Expected status code is 200 expected [400] but found [
 	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:595)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:581)
 
-TestCases.PutBookAPITests.testUpdateBookWithAnotherBooksTitleAsAdmin  Time elapsed: 0.574 s  <<< FAILURE!
+TestCases.PostBookAPITests.testCreateBookWithValidData  Time elapsed: 0.641 s  <<< FAILURE!
+java.lang.AssertionError: Expected status code is 201 expected [201] but found [208]
+	at org.testng.Assert.fail(Assert.java:110)
+	at org.testng.Assert.failNotEquals(Assert.java:1413)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:149)
+	at org.testng.Assert.assertEquals(Assert.java:131)
+	at org.testng.Assert.assertEquals(Assert.java:1240)
+	at TestCases.PostBookAPITests.testCreateBookWithValidData(PostBookAPITests.java:36)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:969)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:829)
+	at org.testng.TestRunner.run(TestRunner.java:602)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:437)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:431)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:391)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:330)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1256)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1176)
+	at org.testng.TestNG.runSuites(TestNG.java:1099)
+	at org.testng.TestNG.run(TestNG.java:1067)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:324)
+	at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:74)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:123)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:456)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:169)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:595)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:581)
+
+TestCases.PutBookAPITests.testUpdateBookWithAnotherBooksTitleAsAdmin  Time elapsed: 0.667 s  <<< FAILURE!
 java.lang.AssertionError: Expected status code is 400 for using another book's title expected [400] but found [404]
 	at org.testng.Assert.fail(Assert.java:110)
 	at org.testng.Assert.failNotEquals(Assert.java:1413)
@@ -207,7 +207,7 @@ java.lang.AssertionError: Expected status code is 400 for using another book's t
 	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:595)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:581)
 
-TestCases.PutBookAPITests.testUpdateBookWithEmptyAuthor  Time elapsed: 0.595 s  <<< FAILURE!
+TestCases.PutBookAPITests.testUpdateBookWithEmptyAuthor  Time elapsed: 0.669 s  <<< FAILURE!
 java.lang.AssertionError: Expected status code is 400 for empty author expected [400] but found [200]
 	at org.testng.Assert.fail(Assert.java:110)
 	at org.testng.Assert.failNotEquals(Assert.java:1413)
@@ -248,7 +248,7 @@ java.lang.AssertionError: Expected status code is 400 for empty author expected 
 	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:595)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:581)
 
-TestCases.PutBookAPITests.testUpdateBookWithMissingOrInvalidTitleAsAdmin  Time elapsed: 0.575 s  <<< FAILURE!
+TestCases.PutBookAPITests.testUpdateBookWithMissingOrInvalidTitleAsAdmin  Time elapsed: 0.712 s  <<< FAILURE!
 java.lang.AssertionError: Expected status code is 400 for missing/empty title expected [400] but found [200]
 	at org.testng.Assert.fail(Assert.java:110)
 	at org.testng.Assert.failNotEquals(Assert.java:1413)
@@ -289,7 +289,7 @@ java.lang.AssertionError: Expected status code is 400 for missing/empty title ex
 	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:595)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:581)
 
-TestCases.PutBookAPITests.testUpdateBookWithNoneParametersAsAdmin  Time elapsed: 0.701 s  <<< FAILURE!
+TestCases.PutBookAPITests.testUpdateBookWithNoneParametersAsAdmin  Time elapsed: 0.684 s  <<< FAILURE!
 java.lang.AssertionError: Response should indicate invalid input parameters expected [true] but found [false]
 	at org.testng.Assert.fail(Assert.java:110)
 	at org.testng.Assert.failNotEquals(Assert.java:1413)
@@ -328,7 +328,7 @@ java.lang.AssertionError: Response should indicate invalid input parameters expe
 	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:595)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:581)
 
-TestCases.PutBookAPITests.testUpdateBookWithValidDataAsAdmin  Time elapsed: 0.61 s  <<< FAILURE!
+TestCases.PutBookAPITests.testUpdateBookWithValidDataAsAdmin  Time elapsed: 0.648 s  <<< FAILURE!
 java.lang.AssertionError: Expected status code is 200 expected [200] but found [404]
 	at org.testng.Assert.fail(Assert.java:110)
 	at org.testng.Assert.failNotEquals(Assert.java:1413)
@@ -369,7 +369,7 @@ java.lang.AssertionError: Expected status code is 200 expected [200] but found [
 	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:595)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:581)
 
-TestCases.PutBookAPITests.testUpdateBookWithValidDataAsUser  Time elapsed: 0.587 s  <<< FAILURE!
+TestCases.PutBookAPITests.testUpdateBookWithValidDataAsUser  Time elapsed: 0.664 s  <<< FAILURE!
 java.lang.AssertionError: Response should indicate forbidden access expected [true] but found [false]
 	at org.testng.Assert.fail(Assert.java:110)
 	at org.testng.Assert.failNotEquals(Assert.java:1413)
@@ -408,7 +408,7 @@ java.lang.AssertionError: Response should indicate forbidden access expected [tr
 	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:595)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:581)
 
-TestCases.DeleteBookAPITests.testDeleteBookAsUser  Time elapsed: 0.573 s  <<< FAILURE!
+TestCases.DeleteBookAPITests.testDeleteBookAsUser  Time elapsed: 0.723 s  <<< FAILURE!
 java.lang.AssertionError: Expected status code is 403 for forbidden access expected [403] but found [404]
 	at org.testng.Assert.fail(Assert.java:110)
 	at org.testng.Assert.failNotEquals(Assert.java:1413)
@@ -449,7 +449,7 @@ java.lang.AssertionError: Expected status code is 403 for forbidden access expec
 	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:595)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:581)
 
-TestCases.DeleteBookAPITests.testDeleteBookWithInvalidIdAsAdmin  Time elapsed: 0.595 s  <<< FAILURE!
+TestCases.DeleteBookAPITests.testDeleteBookWithInvalidIdAsAdmin  Time elapsed: 0.654 s  <<< FAILURE!
 java.lang.AssertionError: Expected status code is 404 for non-existent book deletion expected [404] but found [403]
 	at org.testng.Assert.fail(Assert.java:110)
 	at org.testng.Assert.failNotEquals(Assert.java:1413)
@@ -490,7 +490,7 @@ java.lang.AssertionError: Expected status code is 404 for non-existent book dele
 	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:595)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:581)
 
-TestCases.DeleteBookAPITests.testDeleteBookWithValidIdAsAdmin  Time elapsed: 0.588 s  <<< FAILURE!
+TestCases.DeleteBookAPITests.testDeleteBookWithValidIdAsAdmin  Time elapsed: 0.706 s  <<< FAILURE!
 java.lang.AssertionError: Expected status code is 200 for valid book deletion expected [200] but found [403]
 	at org.testng.Assert.fail(Assert.java:110)
 	at org.testng.Assert.failNotEquals(Assert.java:1413)
@@ -531,7 +531,7 @@ java.lang.AssertionError: Expected status code is 200 for valid book deletion ex
 	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:595)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:581)
 
-UITestCases.BuggyCarsUITests.testCommentCharacterLimit  Time elapsed: 0.293 s  <<< FAILURE!
+UITestCases.BuggyCarsUITests.testCommentCharacterLimit  Time elapsed: 0.339 s  <<< FAILURE!
 java.lang.AssertionError: expected [true] but found [false]
 	at org.testng.Assert.fail(Assert.java:110)
 	at org.testng.Assert.failNotEquals(Assert.java:1413)
@@ -572,7 +572,7 @@ java.lang.AssertionError: expected [true] but found [false]
 	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:595)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:581)
 
-UITestCases.BuggyCarsUITests.testDuplicateRegistration  Time elapsed: 0.61 s  <<< FAILURE!
+UITestCases.BuggyCarsUITests.testDuplicateRegistration  Time elapsed: 0.843 s  <<< FAILURE!
 java.lang.AssertionError: expected [true] but found [false]
 	at org.testng.Assert.fail(Assert.java:110)
 	at org.testng.Assert.failNotEquals(Assert.java:1413)
@@ -612,7 +612,7 @@ java.lang.AssertionError: expected [true] but found [false]
 	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:595)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:581)
 
-UITestCases.BuggyCarsUITests.testLoginWithValidCredentials  Time elapsed: 0.264 s  <<< FAILURE!
+UITestCases.BuggyCarsUITests.testLoginWithValidCredentials  Time elapsed: 0.635 s  <<< FAILURE!
 java.lang.AssertionError: expected [true] but found [false]
 	at org.testng.Assert.fail(Assert.java:110)
 	at org.testng.Assert.failNotEquals(Assert.java:1413)
@@ -652,7 +652,48 @@ java.lang.AssertionError: expected [true] but found [false]
 	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:595)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:581)
 
-UITestCases.BuggyCarsUITests.testMissingFieldsInRegistration  Time elapsed: 0.208 s  <<< FAILURE!
+UITestCases.BuggyCarsUITests.testLogoutFunctionality  Time elapsed: 0.347 s  <<< FAILURE!
+java.lang.AssertionError: expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:110)
+	at org.testng.Assert.failNotEquals(Assert.java:1413)
+	at org.testng.Assert.assertTrue(Assert.java:56)
+	at org.testng.Assert.assertTrue(Assert.java:66)
+	at UITestCases.BuggyCarsUITests.testLoginWithValidCredentials(BuggyCarsUITests.java:44)
+	at UITestCases.BuggyCarsUITests.testLogoutFunctionality(BuggyCarsUITests.java:129)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:969)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:829)
+	at org.testng.TestRunner.run(TestRunner.java:602)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:437)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:431)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:391)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:330)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1256)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1176)
+	at org.testng.TestNG.runSuites(TestNG.java:1099)
+	at org.testng.TestNG.run(TestNG.java:1067)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:324)
+	at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:74)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:123)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:456)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:169)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:595)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:581)
+
+UITestCases.BuggyCarsUITests.testMissingFieldsInRegistration  Time elapsed: 0.442 s  <<< FAILURE!
 java.lang.AssertionError: expected [true] but found [false]
 	at org.testng.Assert.fail(Assert.java:110)
 	at org.testng.Assert.failNotEquals(Assert.java:1413)
@@ -692,7 +733,7 @@ java.lang.AssertionError: expected [true] but found [false]
 	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:595)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:581)
 
-UITestCases.BuggyCarsUITests.testProfilePageAccessibility  Time elapsed: 0.256 s  <<< FAILURE!
+UITestCases.BuggyCarsUITests.testProfilePageAccessibility  Time elapsed: 0.326 s  <<< FAILURE!
 java.lang.AssertionError: expected [true] but found [false]
 	at org.testng.Assert.fail(Assert.java:110)
 	at org.testng.Assert.failNotEquals(Assert.java:1413)
@@ -733,7 +774,7 @@ java.lang.AssertionError: expected [true] but found [false]
 	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:595)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:581)
 
-UITestCases.BuggyCarsUITests.testUserRegistration  Time elapsed: 0.627 s  <<< FAILURE!
+UITestCases.BuggyCarsUITests.testUserRegistration  Time elapsed: 0.767 s  <<< FAILURE!
 java.lang.AssertionError: expected [true] but found [false]
 	at org.testng.Assert.fail(Assert.java:110)
 	at org.testng.Assert.failNotEquals(Assert.java:1413)
@@ -773,7 +814,7 @@ java.lang.AssertionError: expected [true] but found [false]
 	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:595)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:581)
 
-UITestCases.BuggyCarsUITests.testWeakPasswordRegistration  Time elapsed: 0.565 s  <<< FAILURE!
+UITestCases.BuggyCarsUITests.testWeakPasswordRegistration  Time elapsed: 0.69 s  <<< FAILURE!
 java.lang.AssertionError: expected [true] but found [false]
 	at org.testng.Assert.fail(Assert.java:110)
 	at org.testng.Assert.failNotEquals(Assert.java:1413)
