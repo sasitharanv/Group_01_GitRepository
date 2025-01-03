@@ -4,9 +4,6 @@ import Pages.HomePage;
 import Pages.LoginPage;
 import Pages.ProfilePage;
 import Pages.RegisterPage;
-import io.qameta.allure.Description;
-import io.qameta.allure.Severity;
-import io.qameta.allure.SeverityLevel;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -36,9 +33,7 @@ public class BuggyCarsUITests extends BaseTest {
 
         // Wait for the success message
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
-        WebElement successMessage = wait.until(ExpectedConditions.visibilityOfElementLocated(
-                By.xpath("/html/body/my-app/div/main/my-register/div/div/form/div[6]")
-        ));
+        WebElement successMessage = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html/body/my-app/div/main/my-register/div/div/form/div[6]")));
 
         // Verify success message
         Assert.assertTrue(successMessage.isDisplayed(), "Success message is not displayed!");
@@ -47,7 +42,7 @@ public class BuggyCarsUITests extends BaseTest {
 
     //UITC2
     @Test
-    public void testLoginWithValidCredentials()  {
+    public void testLoginWithValidCredentials() {
         LoginPage loginPage = new LoginPage(driver);
 
         loginPage.enterLogin("sasvaratharasa540@gmail.com");
@@ -62,6 +57,7 @@ public class BuggyCarsUITests extends BaseTest {
         boolean isWelcomeMessageDisplayed = driver.findElement(welcomeMessageLocator).isDisplayed();
         Assert.assertTrue(isWelcomeMessageDisplayed, "Welcome message is not displayed after login.");
     }
+
     //UITC3
     //  Test Accessibility of All Links
     @Test
@@ -122,17 +118,32 @@ public class BuggyCarsUITests extends BaseTest {
         Assert.assertEquals(successMessage.getText(), "UsernameExistsException: User already exists");
     }
 
+    // UITC7
+// Verify registration with a weak password
     @Test
     public void testWeakPasswordRegistration() {
-        driver.findElement(By.linkText("Register")).click();
-        driver.findElement(By.id("username")).sendKeys("testuser456");
-        driver.findElement(By.id("firstName")).sendKeys("Weak");
-        driver.findElement(By.id("lastName")).sendKeys("Password");
-        driver.findElement(By.id("password")).sendKeys("123");
-        driver.findElement(By.id("confirmPassword")).sendKeys("123");
-        driver.findElement(By.cssSelector("button[type='submit']")).click();
-        Assert.assertTrue(driver.getPageSource().contains("Password strength is too weak"));
+        HomePage homePage = new HomePage(driver);
+        RegisterPage registerPage = new RegisterPage(driver);
+
+        homePage.clickRegister();
+        registerPage.enterUsername("testuser456");
+        registerPage.enterFirstName("Weak");
+        registerPage.enterLastName("Password");
+        registerPage.enterPassword("123456");
+        registerPage.enterConfirmPassword("123456");
+
+        // Click the Register button
+        driver.findElement(By.cssSelector("button.btn.btn-default[type='submit']")).click();
+
+        // Wait for the error message
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(2));
+        WebElement errorMessage = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html/body/my-app/div/main/my-register/div/div/form/div[6]")));
+
+        // Verify error message
+        Assert.assertTrue(errorMessage.isDisplayed(), "Error message is not displayed!");
+        Assert.assertEquals(errorMessage.getText(), "InvalidPasswordException: Password did not conform with policy: Password not long enough");
     }
+
 
     @Test
     public void testProfilePageAccessibility() {
@@ -176,6 +187,7 @@ public class BuggyCarsUITests extends BaseTest {
     public void testPageTitle() {
         Assert.assertEquals(driver.getTitle(), "Buggy Cars Rating", "Page title is incorrect!");
     }
+
     @Test
     public void testChangePasswordSuccessfully() {
         // Step 1: Log in with valid credentials
@@ -253,6 +265,7 @@ public class BuggyCarsUITests extends BaseTest {
         // Step 7: Log the result
         log("Test completed successfully. Importance of current password double-checked.");
     }
+
     private void log(String message) {
         System.out.println("[LOG] " + message);
     }

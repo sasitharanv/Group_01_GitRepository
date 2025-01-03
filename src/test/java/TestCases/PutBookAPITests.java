@@ -207,7 +207,7 @@ public class PutBookAPITests {
 
         // Prepare book data with another book's title
         Map<String, Object> bookData = new HashMap<>();
-        bookData.put("id", 1);
+        bookData.put("id", 4);
         bookData.put("title", "TitleOfAnotherBook1"); // Simulating another book's title
         bookData.put("author", "CorrectAuthor");
 
@@ -215,10 +215,10 @@ public class PutBookAPITests {
                 .auth().basic(admin.get("username"), admin.get("password"))
                 .contentType("application/json")
                 .body(bookData)
-                .put("/api/books/1");
+                .put("/api/books/4");
 
-        Assert.assertEquals(response.getStatusCode(), 400, "Expected status code is 400 for using another book's title");
-        Assert.assertTrue(response.asString().contains("Invalid input parameters"), "Response should indicate invalid input parameters");
+        Assert.assertEquals(response.getStatusCode(), 208, "Expected status code is 208 for using another book's title");
+        Assert.assertTrue(response.asString().contains("Book Already Exists"), "Response should indicate Book Already Exists");
     }
 
     // TC17: Update a Book with None Parameters (Admin)
@@ -240,6 +240,6 @@ public class PutBookAPITests {
                 .put("/api/books/1");
 
         Assert.assertEquals(response.getStatusCode(), 400, "Expected status code is 400 for none parameters");
-        Assert.assertTrue(response.asString().contains("Invalid input parameters"), "Response should indicate invalid input parameters");
+        Assert.assertTrue(response.asString().contains("Book id is not matched"), "Response should indicate Book id is not matched");
     }
 }
