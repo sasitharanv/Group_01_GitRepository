@@ -4,9 +4,6 @@ import Pages.HomePage;
 import Pages.LoginPage;
 import Pages.ProfilePage;
 import Pages.RegisterPage;
-import io.qameta.allure.Description;
-import io.qameta.allure.Severity;
-import io.qameta.allure.SeverityLevel;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -36,9 +33,7 @@ public class BuggyCarsUITests extends BaseTest {
 
         // Wait for the success message
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
-        WebElement successMessage = wait.until(ExpectedConditions.visibilityOfElementLocated(
-                By.xpath("/html/body/my-app/div/main/my-register/div/div/form/div[6]")
-        ));
+        WebElement successMessage = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html/body/my-app/div/main/my-register/div/div/form/div[6]")));
 
         // Verify success message
         Assert.assertTrue(successMessage.isDisplayed(), "Success message is not displayed!");
@@ -47,7 +42,7 @@ public class BuggyCarsUITests extends BaseTest {
 
     //UITC2
     @Test
-    public void testLoginWithValidCredentials()  {
+    public void testLoginWithValidCredentials() {
         LoginPage loginPage = new LoginPage(driver);
 
         loginPage.enterLogin("sasvaratharasa540@gmail.com");
@@ -62,6 +57,7 @@ public class BuggyCarsUITests extends BaseTest {
         boolean isWelcomeMessageDisplayed = driver.findElement(welcomeMessageLocator).isDisplayed();
         Assert.assertTrue(isWelcomeMessageDisplayed, "Welcome message is not displayed after login.");
     }
+
     //UITC3
     //  Test Accessibility of All Links
     @Test
@@ -122,60 +118,106 @@ public class BuggyCarsUITests extends BaseTest {
         Assert.assertEquals(successMessage.getText(), "UsernameExistsException: User already exists");
     }
 
+    // UITC7
+// Verify registration with a weak password
     @Test
     public void testWeakPasswordRegistration() {
-        driver.findElement(By.linkText("Register")).click();
-        driver.findElement(By.id("username")).sendKeys("testuser456");
-        driver.findElement(By.id("firstName")).sendKeys("Weak");
-        driver.findElement(By.id("lastName")).sendKeys("Password");
-        driver.findElement(By.id("password")).sendKeys("123");
-        driver.findElement(By.id("confirmPassword")).sendKeys("123");
-        driver.findElement(By.cssSelector("button[type='submit']")).click();
-        Assert.assertTrue(driver.getPageSource().contains("Password strength is too weak"));
+        HomePage homePage = new HomePage(driver);
+        RegisterPage registerPage = new RegisterPage(driver);
+
+        homePage.clickRegister();
+        registerPage.enterUsername("testuser456");
+        registerPage.enterFirstName("Weak");
+        registerPage.enterLastName("Password");
+        registerPage.enterPassword("123456");
+        registerPage.enterConfirmPassword("123456");
+
+        // Click the Register button
+        driver.findElement(By.cssSelector("button.btn.btn-default[type='submit']")).click();
+
+        // Wait for the error message
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(2));
+        WebElement errorMessage = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html/body/my-app/div/main/my-register/div/div/form/div[6]")));
+
+        // Verify error message
+        Assert.assertTrue(errorMessage.isDisplayed(), "Error message is not displayed!");
+        Assert.assertEquals(errorMessage.getText(), "InvalidPasswordException: Password did not conform with policy: Password not long enough");
     }
 
+    // UITC8
     @Test
     public void testProfilePageAccessibility() {
         testLoginWithValidCredentials();
-        driver.findElement(By.linkText("Profile")).click();
-        Assert.assertTrue(driver.getPageSource().contains("Your Profile"));
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        WebElement profileLink = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/my-app/header/nav/div/my-login/div/ul/li[1]/span")));
+        profileLink.click();
+        WebElement greetingText = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[contains(text(), 'Hi, Varatharasa')]")));
+        Assert.assertTrue(greetingText.isDisplayed(), "Greeting text 'Hi, Varatharasa' is not displayed!");
+        Assert.assertEquals(greetingText.getText(), "Hi, Varatharasa", "Greeting text does not match the expected value!");
     }
 
+    // UITC9
     @Test
     public void testBrokenLinksOnHomepage() {
+        // Fetch all anchor tags from the homepage
         List<WebElement> links = driver.findElements(By.tagName("a"));
+
+        // Iterate through each link and verify it is not broken
         for (WebElement link : links) {
             String href = link.getAttribute("href");
-            Assert.assertNotNull(href, "Link is broken: " + link.getText());
+
+            // Assert that the href attribute is not null
+            Assert.assertNotNull(href, "Broken link found: " + (link.getText().isEmpty() ? "Unnamed link" : link.getText()));
+
+            // Optionally, you can log each link for debugging
+            System.out.println("Verified link: " + href);
         }
     }
 
+    // UITC10
     @Test
     public void testCommentCharacterLimit() {
         testLoginWithValidCredentials();
         driver.findElement(By.linkText("Overall Rating")).click();
+        System.out.println("ryun");
         driver.findElement(By.linkText("Buggy Car Model")).click();
+        System.out.println("ryun");
         driver.findElement(By.id("comment")).sendKeys("a".repeat(1001)); // Exceeding limit
         driver.findElement(By.cssSelector("button[type='submit']")).click();
         Assert.assertTrue(driver.getPageSource().contains("Comment exceeds maximum length"));
     }
 
+    // UIT11
     @Test
     public void testLogoutFunctionality() {
+        // Instantiate the HomePage
         HomePage homePage = new HomePage(driver);
-
+        // Log in with valid credentials
         testLoginWithValidCredentials();
+
+        // Click on the profile and logout
         homePage.clickProfile();
         driver.findElement(By.linkText("Logout")).click();
 
-        Assert.assertTrue(driver.getPageSource().contains("You have been logged out"));
+        // Wait for the Login button to become visible after logging out
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        WebElement loginButton = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html/body/my-app/header/nav/div/my-login/div/form/button")));
+
+        // Assert that the Login button is visible
+        Assert.assertTrue(loginButton.isDisplayed(), "The Login button is not visible after logging out!");
+
+        // Verify that the button text is "Login"
+        Assert.assertEquals(loginButton.getText().trim(), "Login", "The button text is not as expected after logging out!");
     }
 
+    // UITC12
     //  Verify Page Title
     @Test
     public void testPageTitle() {
         Assert.assertEquals(driver.getTitle(), "Buggy Cars Rating", "Page title is incorrect!");
     }
+
+    // UITC13
     @Test
     public void testChangePasswordSuccessfully() {
         // Step 1: Log in with valid credentials
@@ -215,6 +257,7 @@ public class BuggyCarsUITests extends BaseTest {
         log("Test completed successfully. Password changed and success message verified.");
     }
 
+    // UITC14
     @Test
     public void testChangePasswordWithInvalidCurrentPassword() {
         // Step 1: Log in with valid credentials
@@ -253,6 +296,7 @@ public class BuggyCarsUITests extends BaseTest {
         // Step 7: Log the result
         log("Test completed successfully. Importance of current password double-checked.");
     }
+
     private void log(String message) {
         System.out.println("[LOG] " + message);
     }

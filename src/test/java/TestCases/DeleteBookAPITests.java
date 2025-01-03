@@ -18,14 +18,14 @@ public class DeleteBookAPITests {
         RestAssuredClient.getInstance();
     }
 
-    // TC1: Delete a book with valid ID (Admin)
+    // TC22: Delete a book with valid ID (Admin)
     @Test
     public void testDeleteBookWithValidIdAsAdmin() {
         // Get credentials for admin user
         Map<String, String> admin = UserFactory.getUser("admin");
 
         // Delete a book with valid ID
-        int validBookId = 1;
+        int validBookId = 16;
 
         Response response = RestAssured.given()
                 .auth().basic(admin.get("username"), admin.get("password"))
@@ -38,11 +38,11 @@ public class DeleteBookAPITests {
         Assert.assertTrue(response.asString().contains("Book deleted successfully"), "Response should indicate successful deletion");
     }
 
-    // TC2: Delete a book with invalid/non-existent ID (Admin)
+    // TC23: Delete a book with invalid/non-existent ID (Admin)
     @Test
-    public void testDeleteBookWithInvalidIdAsAdmin() {
+    public void testDeleteBookWithInvalidId() {
         // Get credentials for admin user
-        Map<String, String> admin = UserFactory.getUser("admin");
+        Map<String, String> admin = UserFactory.getUser("user");
 
         // Attempt to delete a book with an invalid/non-existent ID
         int invalidBookId = 999; // Non-existent ID
@@ -65,7 +65,7 @@ public class DeleteBookAPITests {
         Map<String, String> user = UserFactory.getUser("user");
 
         // Attempt to delete a book as a regular user
-        int bookId = 1;
+        int bookId = 19;
 
         Response response = RestAssured.given()
                 .auth().basic(user.get("username"), user.get("password"))
