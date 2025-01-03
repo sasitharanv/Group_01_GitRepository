@@ -94,7 +94,7 @@ public class PutBookAPITests {
         Assert.assertTrue(response.asString().contains("Book not found"), "Response should indicate book not found");
 
     }
-    //Test Case 18: Update a book with missing author
+    //Test Case 19: Verify updating a book with missing/invalid author fails
     @Test
     public void testUpdateBookWithEmptyAuthor() {
         // Get credentials for admin user
@@ -117,6 +117,7 @@ public class PutBookAPITests {
         Assert.assertEquals(responseEmptyAuthor.getStatusCode(), 400, "Expected status code is 400 for empty author");
     }
 
+    //TC20:Verify updating a book using another book's ID fails.
     @Test
     public void testUpdateBookWithAnotherBooksId() {
 
@@ -139,7 +140,7 @@ public class PutBookAPITests {
         Assert.assertEquals(responseInvalidId.getStatusCode(), 400, "Expected status code is 400 for updating ID");
         Assert.assertTrue(responseInvalidId.getBody().asString().contains("Book id is not matched"), "Error message should mention 'Book id is not matched'");
     }
-
+    //TC21:Verify updating a book with null title and author fails.
     @Test
     public void testUpdateBookWithMissingTitleAndAuthor() {
 
@@ -148,7 +149,7 @@ public class PutBookAPITests {
 
         // Prepare invalid data with null title and author
         Map<String, Object> missingTitleAuthor = new HashMap<>();
-        missingTitleAuthor.put("id", 1);
+        missingTitleAuthor.put("id", 3);
         missingTitleAuthor.put("title", null);
         missingTitleAuthor.put("author", null);
 
@@ -157,14 +158,14 @@ public class PutBookAPITests {
                 .auth().basic(admin.get("username"), admin.get("password"))
                 .contentType("application/json")
                 .body(missingTitleAuthor)
-                .put("/api/books/1");
+                .put("/api/books/3");
 
         Assert.assertEquals(responseMissingFields.getStatusCode(), 400, "Expected status code is 400 for missing fields");
         Assert.assertTrue(responseMissingFields.getBody().asString().contains("Mandatory parameters should not be null"), "Error message should mention 'Mandatory parameters should not be null'");
 
     }
 
-    // TC15: Update a Book with Missing/Invalid Title (Admin)
+    // TC16: Update a Book with Missing/Invalid Title (Admin)
     @Test
     public void testUpdateBookWithMissingOrInvalidTitleAsAdmin() {
         // Get credentials for admin user
@@ -199,7 +200,7 @@ public class PutBookAPITests {
         Assert.assertEquals(responseInvalidTitle.getStatusCode(), 400, "Expected status code is 400 for invalid title");
     }
 
-    // TC16: Update a Book with Another Book's Title (Admin)
+    // TC17: Update a Book with Another Book's Title (Admin)
     @Test
     public void testUpdateBookWithAnotherBooksTitleAsAdmin() {
         // Get credentials for admin user
@@ -221,7 +222,7 @@ public class PutBookAPITests {
         Assert.assertTrue(response.asString().contains("Book Already Exists"), "Response should indicate Book Already Exists");
     }
 
-    // TC17: Update a Book with None Parameters (Admin)
+    // TC18: Update a Book with None Parameters (Admin)
     @Test
     public void testUpdateBookWithNoneParametersAsAdmin() {
         // Get credentials for admin user

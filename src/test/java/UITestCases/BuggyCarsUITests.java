@@ -58,7 +58,7 @@ public class BuggyCarsUITests extends BaseTest {
         Assert.assertTrue(isWelcomeMessageDisplayed, "Welcome message is not displayed after login.");
     }
 
-    //UITC3
+    //UITC11
     //  Test Accessibility of All Links
     @Test
     public void testAccessibilityOfLinks() {
@@ -295,6 +295,26 @@ public class BuggyCarsUITests extends BaseTest {
 
         // Step 7: Log the result
         log("Test completed successfully. Importance of current password double-checked.");
+    }
+
+    //UITC12
+    @Test
+    public void viewListOffAllRegisteredVehicles() {
+        // Wait for the image element to be visible
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        WebElement imageElement = wait.until(ExpectedConditions.visibilityOfElementLocated(
+                By.xpath("//a[@href='/overall']/img")
+        ));
+
+        // Click on the image
+        imageElement.click();
+
+        // Wait for the page to load and URL to update
+        wait.until(ExpectedConditions.urlToBe("https://buggy.justtestit.org/overall"));
+
+        // Verify the URL
+        String currentUrl = driver.getCurrentUrl();
+        Assert.assertEquals(currentUrl, "https://buggy.justtestit.org/overall", "Navigation to the Overall Rating page failed!");
     }
 
     private void log(String message) {
