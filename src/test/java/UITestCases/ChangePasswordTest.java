@@ -11,14 +11,7 @@ import org.testng.annotations.Test;
 public class ChangePasswordTest extends BaseTest {
     WebDriver driver;
 
-//    @BeforeClass
-//    public void setUp() {
-//        // Set up WebDriver
-//        System.setProperty("webdriver.chrome.driver", "/path/to/chromedriver");
-//        driver = new ChromeDriver();
-//        driver.manage().window().maximize();
-//        driver.manage().timeouts().implicitlyWait(10, java.util.concurrent.TimeUnit.SECONDS);
-//    }
+
 
     @Test
     public void testChangePasswordSuccessfully() {

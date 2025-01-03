@@ -18,8 +18,6 @@ public class GetBookAPITests {
     }
 
 
-
-
     @Test
     public void testGetAllBooksAsAdmin() {
         // Get credentials for admin user
@@ -53,12 +51,11 @@ public class GetBookAPITests {
 
         Response response = RestAssured.given()
                 .auth().basic(user.get("username"), user.get("password"))
-                .get("/api/books/1");
+                .get("/api/books/2");
 
         Assert.assertEquals(response.getStatusCode(), 200, "Expected status code is 200");
         Assert.assertNotNull(response.jsonPath().get("title"), "Book title should not be null");
     }
-
 
 
     @Test
@@ -101,19 +98,28 @@ public class GetBookAPITests {
 
 
     @Test
-    public void testGetBookByIdAsRegularUser() {
-        // Get regular user credentials
+    public void testGetBookByInvalidIdAsUser() {
+        // Get admin credentials
         Map<String, String> user = UserFactory.getUser("user");
 
-        // Make a GET request for a valid book ID (e.g., 1)
+        // Make a GET request for an invalid book ID (e.g., 9999)
         Response response = RestAssured.given()
                 .auth().basic(user.get("username"), user.get("password"))
-                .get("/api/books/1");
+                .get("/api/books/9999");
 
         // Assertions
-        Assert.assertEquals(response.getStatusCode(), 200, "Expected status code is 200");
-        Assert.assertNotNull(response.jsonPath().get("title"), "Book title should not be null");
-        Assert.assertNotNull(response.jsonPath().get("author"), "Book author should not be null");
+        Assert.assertEquals(response.getStatusCode(), 404, "Expected status code is 404");
+
+        // Check content type
+        String contentType = response.getHeader("Content-Type");
+        if (contentType != null && contentType.contains("application/json")) {
+            // Parse JSON response
+            Assert.assertEquals(response.jsonPath().getString("error"), "Book not found", "Expected error message is 'Book not found'");
+        } else {
+            // Handle non-JSON response
+            String responseBody = response.getBody().asString();
+            Assert.assertTrue(responseBody.contains("Book not found"), "Expected response body to contain 'Book not found'");
+        }
     }
 
 
