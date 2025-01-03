@@ -9,8 +9,13 @@
       <class name="TestCases.PostBookAPITests">
         <methods>
           <include name="setup"/>
+          <include name="testCreateBookWithNumericAuthorAsAdmin"/>
           <include name="testCreateBookWithMissingAuthor"/>
+          <include name="testCreateBookWithValidDataAsAdmin"/>
           <include name="testCreateBookWithValidData"/>
+          <include name="testCreateBookWithNumericTitleAsAdmin"/>
+          <include name="testCreateBookWithMissingTitleAsAdmin"/>
+          <include name="testCreateBookWithDuplicateIdAsAdmin"/>
         </methods>
       </class> <!-- TestCases.PostBookAPITests -->
       <class name="TestCases.GetBookAPITests">
@@ -26,16 +31,16 @@
           <include name="testUpdateBookWithMissingOrInvalidTitleAsAdmin"/>
           <include name="testUpdateBookWithNoneParametersAsAdmin"/>
           <include name="testUpdateBookWithEmptyAuthor"/>
-          <include name="testUpdateBookWithValidDataAsUser"/>
           <include name="setup"/>
           <include name="testUpdateBookWithAnotherBooksTitleAsAdmin"/>
+          <include name="testUpdateBookWithMissingTitleAndAuthor"/>
         </methods>
       </class> <!-- TestCases.PutBookAPITests -->
       <class name="TestCases.DeleteBookAPITests">
         <methods>
           <include name="testDeleteBookWithValidIdAsAdmin"/>
-          <include name="setup"/>
           <include name="testDeleteBookWithInvalidIdAsAdmin"/>
+          <include name="setup"/>
           <include name="testDeleteBookAsUser"/>
         </methods>
       </class> <!-- TestCases.DeleteBookAPITests -->
@@ -47,14 +52,12 @@
         <methods>
           <include name="testLogoutFunctionality"/>
           <include name="testCommentCharacterLimit"/>
-          <include name="testDuplicateRegistration"/>
+          <include name="testChangePasswordSuccessfully"/>
           <include name="setup"/>
           <include name="testMissingFieldsInRegistration"/>
-          <include name="testUserRegistration"/>
           <include name="testProfilePageAccessibility"/>
           <include name="testWeakPasswordRegistration"/>
           <include name="teardown"/>
-          <include name="testLoginWithValidCredentials"/>
         </methods>
       </class> <!-- UITestCases.BuggyCarsUITests -->
     </classes>

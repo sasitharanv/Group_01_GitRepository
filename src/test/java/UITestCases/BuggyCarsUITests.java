@@ -21,30 +21,37 @@ public class BuggyCarsUITests extends BaseTest {
 
     //UITC1
     @Test
-    @Description("Verify user registration with valid details.")
-    @Severity(SeverityLevel.CRITICAL)
-    public void testUserRegistration() {
+    public void testSuccessfulRegistration() {
         HomePage homePage = new HomePage(driver);
         RegisterPage registerPage = new RegisterPage(driver);
-
         homePage.clickRegister();
-        registerPage.enterUsername("testuser123");
+        registerPage.enterUsername("sasiya12");
         registerPage.enterFirstName("Test");
         registerPage.enterLastName("User");
         registerPage.enterPassword("Password123!");
         registerPage.enterConfirmPassword("Password123!");
-        registerPage.submitRegistration();
 
-        Assert.assertTrue(driver.getPageSource().contains("Registration is successful"));
+        // Click the Register button
+        driver.findElement(By.cssSelector("button.btn.btn-default[type='submit']")).click();
+
+        // Wait for the success message
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+        WebElement successMessage = wait.until(ExpectedConditions.visibilityOfElementLocated(
+                By.xpath("/html/body/my-app/div/main/my-register/div/div/form/div[6]")
+        ));
+
+        // Verify success message
+        Assert.assertTrue(successMessage.isDisplayed(), "Success message is not displayed!");
+        Assert.assertEquals(successMessage.getText(), "Registration is successful");
     }
 
     //UITC2
     @Test
-    public void testLoginWithValidCredentials() {
+    public void testLoginWithValidCredentials()  {
         LoginPage loginPage = new LoginPage(driver);
 
-        loginPage.enterLogin("kirusanthanr");
-        loginPage.enterPassword("Malathi75#");
+        loginPage.enterLogin("sasvaratharasa540@gmail.com");
+        loginPage.enterPassword("Malathi75$");
         loginPage.clickSubmit();
 
         By welcomeMessageLocator = By.xpath("/html/body/my-app/header/nav/div/my-login/div/ul/li[1]/span");
@@ -55,7 +62,6 @@ public class BuggyCarsUITests extends BaseTest {
         boolean isWelcomeMessageDisplayed = driver.findElement(welcomeMessageLocator).isDisplayed();
         Assert.assertTrue(isWelcomeMessageDisplayed, "Welcome message is not displayed after login.");
     }
-
     //UITC3
     //  Test Accessibility of All Links
     @Test
