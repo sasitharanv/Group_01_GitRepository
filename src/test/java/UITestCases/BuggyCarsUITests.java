@@ -2,15 +2,19 @@ package UITestCases;
 
 import Pages.HomePage;
 import Pages.LoginPage;
+import Pages.ProfilePage;
 import Pages.RegisterPage;
 import io.qameta.allure.Description;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import java.time.Duration;
 import java.util.List;
 
 public class BuggyCarsUITests extends BaseTest {
@@ -37,11 +41,17 @@ public class BuggyCarsUITests extends BaseTest {
     public void testLoginWithValidCredentials() {
         LoginPage loginPage = new LoginPage(driver);
 
-        loginPage.enterLogin("testuser123");
-        loginPage.enterPassword("Password123!");
+        loginPage.enterLogin("kirusanthanr");
+        loginPage.enterPassword("Malathi75@");
         loginPage.clickSubmit();
 
-        Assert.assertTrue(driver.getPageSource().contains("Hi, Test"));
+        By welcomeMessageLocator = By.xpath("/html/body/my-app/header/nav/div/my-login/div/ul/li[1]/span");
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10)); // Wait up to 10 seconds
+        wait.until(ExpectedConditions.presenceOfElementLocated(welcomeMessageLocator));
+
+        // Step 4: Assert that the welcome message is displayed
+        boolean isWelcomeMessageDisplayed = driver.findElement(welcomeMessageLocator).isDisplayed();
+        Assert.assertTrue(isWelcomeMessageDisplayed, "Welcome message is not displayed after login.");
     }
 
 
@@ -120,7 +130,7 @@ public class BuggyCarsUITests extends BaseTest {
         driver.findElement(By.id("comment")).sendKeys("a".repeat(1001)); // Exceeding limit
         driver.findElement(By.cssSelector("button[type='submit']")).click();
         Assert.assertTrue(driver.getPageSource().contains("Comment exceeds maximum length"));
-}
+    }
 
     @Test
     public void testLogoutFunctionality() {
@@ -138,7 +148,47 @@ public class BuggyCarsUITests extends BaseTest {
     public void testPageTitle() {
         Assert.assertEquals(driver.getTitle(), "Buggy Cars Rating", "Page title is incorrect!");
     }
+    @Test
+    public void testChangePasswordSuccessfully() {
+        // Step 1: Log in with valid credentials
+        log("Logging in with valid credentials...");
+        testLoginWithValidCredentials();
 
+        // Step 2: Navigate to the profile page
+        log("Navigating to the profile page...");
+        ProfilePage profilePage = new ProfilePage(driver);
+        profilePage.clickProfile();
+
+        // Step 3: Fill the change password form
+        log("Filling the change password form...");
+        profilePage.fillChangePasswordForm("Malathi75@", "Malathi75#", "Malathi75#");
+
+        // Step 4: Wait for the success message to appear
+        log("Waiting for the success message to appear...");
+
+        // Use a more reliable XPath for the success message
+        By successMessageLocator = By.xpath("//div[contains(@class, 'alert-success') and contains(text(), 'The profile has been saved successful')]");
+
+        // Wait for the success message to be visible (not just present in the DOM)
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20)); // Wait up to 20 seconds
+        WebElement successMessage = wait.until(ExpectedConditions.visibilityOfElementLocated(successMessageLocator));
+
+        // Step 5: Get the text of the success message
+        log("Retrieving the success message text...");
+        String successMessageText = successMessage.getText();
+        log("Success message text: " + successMessageText);
+
+        // Step 6: Assert that the success message is displayed and contains the expected text
+        log("Asserting the success message...");
+        String expectedMessage = "The profile has been saved successful"; // Replace with the expected message
+        Assert.assertTrue(successMessageText.contains(expectedMessage), "Success message does not match the expected text.");
+
+        // Step 7: Log the result
+        log("Test completed successfully. Password changed and success message verified.");
+    }
+    private void log(String message) {
+        System.out.println("[LOG] " + message);
+    }
 }
 
 
