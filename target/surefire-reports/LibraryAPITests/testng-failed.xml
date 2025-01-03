@@ -6,11 +6,16 @@
   </listeners>
   <test thread-count="5" name="APITestSuite(failed)" verbose="0">
     <classes>
+      <class name="TestCases.PostBookAPITests">
+        <methods>
+          <include name="setup"/>
+          <include name="testCreateBookWithMissingAuthor"/>
+          <include name="testCreateBookWithValidData"/>
+        </methods>
+      </class> <!-- TestCases.PostBookAPITests -->
       <class name="TestCases.GetBookAPITests">
         <methods>
-          <include name="testGetBookByIdAsAdmin"/>
           <include name="testGetBookByIdAsRegularUser"/>
-          <include name="testGetBookByValidIdAsAdmin"/>
           <include name="testGetBookByIdAsUser"/>
           <include name="setup"/>
         </methods>
@@ -21,9 +26,9 @@
           <include name="testUpdateBookWithMissingOrInvalidTitleAsAdmin"/>
           <include name="testUpdateBookWithNoneParametersAsAdmin"/>
           <include name="testUpdateBookWithEmptyAuthor"/>
-          <include name="testUpdateBookWithAnotherBooksTitleAsAdmin"/>
           <include name="testUpdateBookWithValidDataAsUser"/>
           <include name="setup"/>
+          <include name="testUpdateBookWithAnotherBooksTitleAsAdmin"/>
         </methods>
       </class> <!-- TestCases.PutBookAPITests -->
       <class name="TestCases.DeleteBookAPITests">
@@ -40,6 +45,7 @@
     <classes>
       <class name="UITestCases.BuggyCarsUITests">
         <methods>
+          <include name="testLogoutFunctionality"/>
           <include name="testCommentCharacterLimit"/>
           <include name="testDuplicateRegistration"/>
           <include name="setup"/>
@@ -47,8 +53,8 @@
           <include name="testUserRegistration"/>
           <include name="testProfilePageAccessibility"/>
           <include name="testWeakPasswordRegistration"/>
-          <include name="testLoginWithValidCredentials"/>
           <include name="teardown"/>
+          <include name="testLoginWithValidCredentials"/>
         </methods>
       </class> <!-- UITestCases.BuggyCarsUITests -->
     </classes>

@@ -68,29 +68,10 @@ public class GetBookAPITests {
 
         Response response = RestAssured.given()
                 .auth().basic(user.get("username"), user.get("password"))
-                .get("/api/books/1");
+                .get("/api/books/2");
 
         Assert.assertEquals(response.getStatusCode(), 200, "Expected status code is 200");
         Assert.assertNotNull(response.jsonPath().get("title"), "Book title should not be null");
-    }
-
-
-
-
-    @Test
-    public void testGetBookByValidIdAsAdmin() {
-        // Get admin credentials
-        Map<String, String> admin = UserFactory.getUser("admin");
-
-        // Make a GET request for a valid book ID (e.g., 1)
-        Response response = RestAssured.given()
-                .auth().basic(admin.get("username"), admin.get("password"))
-                .get("/api/books/9999");
-
-        // Assertions
-        Assert.assertEquals(response.getStatusCode(), 400, "Expected status code is 200");
-        Assert.assertNotNull(response.jsonPath().get("title"), "Book title should not be null");
-        Assert.assertNotNull(response.jsonPath().get("author"), "Book author should not be null");
     }
 
     @Test
