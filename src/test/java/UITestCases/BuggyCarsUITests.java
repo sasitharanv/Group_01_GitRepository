@@ -8,9 +8,12 @@ import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import java.time.Duration;
 import java.util.List;
 
 public class BuggyCarsUITests extends BaseTest {
@@ -124,13 +127,26 @@ public class BuggyCarsUITests extends BaseTest {
 
     @Test
     public void testLogoutFunctionality() {
+        // Instantiate the HomePage
         HomePage homePage = new HomePage(driver);
-
+        // Log in with valid credentials
         testLoginWithValidCredentials();
+
+        // Click on the profile and logout
         homePage.clickProfile();
         driver.findElement(By.linkText("Logout")).click();
 
-        Assert.assertTrue(driver.getPageSource().contains("You have been logged out"));
+        // Wait for the Login button to become visible after logging out
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        WebElement loginButton = wait.until(ExpectedConditions.visibilityOfElementLocated(
+                By.xpath("/html/body/my-app/header/nav/div/my-login/div/form/button")
+        ));
+
+        // Assert that the Login button is visible
+        Assert.assertTrue(loginButton.isDisplayed(), "The Login button is not visible after logging out!");
+
+        // Verify that the button text is "Login"
+        Assert.assertEquals(loginButton.getText().trim(), "Login", "The button text is not as expected after logging out!");
     }
 
     //  Verify Page Title
