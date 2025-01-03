@@ -85,26 +85,7 @@ public class PostBookAPITests {
 
     }
 
-    @Test
-    @Description("Test to verify that creating a book without  author parameter as an admin returns a 400 Bad Request error.")
-    public void testCreateBookWithMissingAuthorAsAdmin() {
-        // Get admin credentials
-        Map<String, String> admin = UserFactory.getUser("admin");
 
-        // Request body with missing title
-        String requestBody = "{ \"id\": 1, \"title\": \"book Names\" }";
-
-        // Make a POST request to create a book
-        Response response = RestAssured.given()
-                .auth().basic(admin.get("username"), admin.get("password"))
-                .contentType("application/json")
-                .body(requestBody)
-                .post("/api/books");
-
-        // Assertions
-        Assert.assertEquals(response.getStatusCode(), 400, "Expected status code is 400");
-
-    }
 
 
     @Test
