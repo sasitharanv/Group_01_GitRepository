@@ -1,1 +1,0 @@
-{"uuid":"fbebb4e4-d15f-4669-af88-6e5a5d56460c","name":"TestCases.DeleteBookAPITests","children":["ea451ad6-759f-4b3e-b5d5-1c59de197add"],"befores":[{"name":"setup","status":"passed","stage":"finished","description":"","steps":[],"attachments":[],"parameters":[],"start":1735901402504,"stop":1735901402773}],"afters":[],"start":1735901402475,"stop":1735901404333}

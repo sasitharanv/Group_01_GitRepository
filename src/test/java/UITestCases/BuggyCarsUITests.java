@@ -22,7 +22,7 @@ public class BuggyCarsUITests extends BaseTest {
         HomePage homePage = new HomePage(driver);
         RegisterPage registerPage = new RegisterPage(driver);
         homePage.clickRegister();
-        registerPage.enterUsername("sasiya12");
+        registerPage.enterUsername("sasitharan123");
         registerPage.enterFirstName("Test");
         registerPage.enterLastName("User");
         registerPage.enterPassword("Password123!");
